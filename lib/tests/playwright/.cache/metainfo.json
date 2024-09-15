@@ -1,0 +1,98 @@
+{
+  "version": "1.47.0",
+  "viteVersion": "5.4.5",
+  "registerSourceHash": "f6967513a571a5b23c50f560dd13742cb60e5957",
+  "components": [
+    {
+      "id": "c__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button_onx_button_cases_GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm",
+      "filename": "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "./onx-button.cases",
+      "remoteName": "GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm"
+    },
+    {
+      "id": "c__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button_onx_button_cases_GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm",
+      "filename": "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "./onx-button.cases",
+      "remoteName": "GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm"
+    },
+    {
+      "id": "c__Users_sfree_software_projects_onx_components_lib_src_components_onx_button_component",
+      "filename": "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "../../../src/components/onx-button/component"
+    },
+    {
+      "id": "C__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button_onx_button_cases_GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm",
+      "filename": "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "./onx-button.cases",
+      "remoteName": "GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm"
+    },
+    {
+      "id": "C__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button_onx_button_cases_GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm",
+      "filename": "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "./onx-button.cases",
+      "remoteName": "GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm"
+    },
+    {
+      "id": "C__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button___components_onx_button_component",
+      "filename": "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "@/components/onx-button/component"
+    },
+    {
+      "id": "c__Users_sfree_software_projects_onx_components_lib_tests_components_onx_button___components_onx_button_component",
+      "filename": "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "@/components/onx-button/component"
+    },
+    {
+      "id": "c__Users_sfree_software_projects_onx_components_lib_src_components_onx_button",
+      "filename": "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.spec.ts",
+      "importSource": "../../../src/components/onx-button"
+    }
+  ],
+  "sources": {
+    "C:/Users/sfree/software_projects/onx-components/lib/tests/playwright/index.html": {
+      "timestamp": 1726331398111.5679
+    },
+    "C:/Users/sfree/software_projects/onx-components/lib/tests/playwright/index.ts": {
+      "timestamp": 1726326710689.133
+    },
+    "C:/Users/sfree/software_projects/onx-components/lib/src/components/onx-button/index.ts": {
+      "timestamp": 1726411827800.1272
+    },
+    "C:/Users/sfree/software_projects/onx-components/lib/src/components/onx-button/component.ts": {
+      "timestamp": 1726415984045.9685
+    },
+    "C:/Users/sfree/software_projects/onx-components/lib/tests/components/onx-button/onx-button.cases.ts": {
+      "timestamp": 1726404430349.532
+    },
+    "C:/Users/sfree/software_projects/onx-components/lib/src/components/onx-component.ts": {
+      "timestamp": 1726407394039.8867
+    }
+  },
+  "deps": {
+    "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.cases.ts": [
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.cases.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\index.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-component.ts"
+    ],
+    "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts": [
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-component.ts"
+    ],
+    "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.cases.ts": [
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\tests\\components\\onx-button\\onx-button.cases.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\index.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-component.ts"
+    ],
+    "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts": [
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-component.ts"
+    ],
+    "c:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\index.ts": [
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\index.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-button\\component.ts",
+      "C:\\Users\\sfree\\software_projects\\onx-components\\lib\\src\\components\\onx-component.ts"
+    ]
+  }
+}
