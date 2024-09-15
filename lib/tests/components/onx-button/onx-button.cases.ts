@@ -1,15 +1,27 @@
 import '../../../src/components/onx-button';
-import crypto from 'crypto';
+import { SnapshotTestCase } from '../../utils.cs/snapshot-test-case';
+import '../../../src/components/onx-component';
+import { getRandomCaseName } from '../../utils.cs/utils';
 
-abstract class TestCase extends HTMLElement {
+export class GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly extends SnapshotTestCase {
   constructor() {
     super();
   }
 
-  abstract defineCase(): void;
+  createElementUnderTest() {
+    const button = document.createElement('onx-button');
+    button.variant = 'primary-filled';
+    button.textContent = 'Primary Filled';
+    return button;
+  }
 }
 
-export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends TestCase {
+customElements.define(
+  getRandomCaseName(),
+  GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly
+);
+
+export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends HTMLElement {
   constructor() {
     super();
   }
@@ -28,16 +40,11 @@ export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends TestCa
     form.appendChild(button);
     this.appendChild(form);
   }
-
-  defineCase(): void {
-    customElements.define(
-      getRandomCaseName(),
-      GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm
-    );
-  }
 }
 
-export class GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm extends TestCase {
+customElements.define(getRandomCaseName(), GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm);
+
+export class GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm extends HTMLElement {
   constructor() {
     super();
   }
@@ -56,15 +63,6 @@ export class GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm extends Test
     form.appendChild(button);
     this.appendChild(form);
   }
-
-  defineCase() {
-    customElements.define(
-      getRandomCaseName(),
-      GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm
-    );
-  }
 }
 
-function getRandomCaseName() {
-  return `onx-button-case-${crypto.randomUUID()}`;
-}
+customElements.define(getRandomCaseName(), GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm);
