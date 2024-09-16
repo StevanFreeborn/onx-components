@@ -141,7 +141,7 @@ export default abstract class OnxComponent extends HTMLElement {
   connectedCallback() {
     const css = new CSSStyleSheet();
     css.replaceSync(OnxComponent.baseStyles);
-    this.shadowRoot.adoptedStyleSheets.push(css);
+    this.shadowRoot?.adoptedStyleSheets.push(css);
     this.render();
   }
 }

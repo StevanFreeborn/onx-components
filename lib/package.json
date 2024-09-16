@@ -7,8 +7,11 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
+    "clean": "rimraf ./dist",
+    "build:tsc": "npm run clean && tsc",
+    "build:rollup": "npm run clean && rollup -c",
+    "watch:tsc": "npm run clean && tsc -w",
+    "watch:rollup": "npm run clean && rollup -c -w",
     "format:fix": "prettier --write .",
     "lint:fix": "eslint --fix .",
     "test": "playwright test -c ./tests/playwright-ct.config.ts",

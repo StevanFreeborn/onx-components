@@ -127,6 +127,8 @@ export default class OnxButton extends OnxComponent {
     button: 'button',
   };
 
+  private button = document.createElement('button');
+
   get type(): string {
     return this.getAttribute('type') || 'submit';
   }
@@ -139,7 +141,7 @@ export default class OnxButton extends OnxComponent {
       return;
     }
 
-    this.shadowRoot.querySelector('button')?.setAttribute('type', value);
+    this.button.setAttribute('type', value);
     this.setAttribute('type', value);
   }
 
@@ -155,7 +157,7 @@ export default class OnxButton extends OnxComponent {
       return;
     }
 
-    this.shadowRoot.querySelector('button')?.classList.replace(this.variant, value);
+    this.button.classList.replace(this.variant, value);
     this.setAttribute('variant', value);
   }
 
@@ -174,8 +176,6 @@ export default class OnxButton extends OnxComponent {
     this.button.removeAttribute('disabled');
   }
 
-  private button = document.createElement('button');
-
   static defineElement() {
     if (customElements.get(OnxButton.tagName)) {
       console.warn(`${OnxButton.tagName} is already defined`);
@@ -186,11 +186,11 @@ export default class OnxButton extends OnxComponent {
   }
 
   private submitForm() {
-    this.internals.form.requestSubmit();
+    this.internals.form?.requestSubmit();
   }
 
   private resetForm() {
-    this.internals.form.reset();
+    this.internals.form?.reset();
   }
 
   constructor() {
@@ -213,8 +213,8 @@ export default class OnxButton extends OnxComponent {
     const styles = document.createElement('style');
     styles.textContent = OnxButton.styles;
 
-    this.shadowRoot.appendChild(styles);
-    this.shadowRoot.appendChild(this.button);
+    this.shadowRoot?.appendChild(styles);
+    this.shadowRoot?.appendChild(this.button);
 
     console.log('rendered');
   }

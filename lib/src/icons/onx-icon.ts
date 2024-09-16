@@ -26,7 +26,7 @@ export default abstract class OnxIcon extends OnxComponent {
   }
 
   protected render() {
-    this.shadowRoot.appendChild(this.svg);
+    this.shadowRoot?.appendChild(this.svg);
   }
 
   private static obsAttributes = {

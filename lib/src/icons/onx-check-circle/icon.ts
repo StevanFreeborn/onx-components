@@ -23,10 +23,6 @@ export default class OnxCheckCircle extends OnxIcon {
     `;
   }
 
-  protected render(): void {
-    this.shadowRoot.appendChild(this.svg);
-  }
-
   static defineElement() {
     if (customElements.get(OnxCheckCircle.tagName)) {
       console.warn(`${OnxCheckCircle.tagName} is already defined`);

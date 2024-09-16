@@ -23,10 +23,6 @@ export default class OnxCreate extends OnxIcon {
     `;
   }
 
-  protected render(): void {
-    this.shadowRoot.appendChild(this.svg);
-  }
-
   static defineElement() {
     if (customElements.get(OnxCreate.tagName)) {
       console.warn(`${OnxCreate.tagName} is already defined`);
