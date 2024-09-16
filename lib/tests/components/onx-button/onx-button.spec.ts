@@ -20,6 +20,19 @@ test.describe('OnxButton', () => {
     await expect(result).toHaveScreenshot();
   });
 
+  test('given button variant is primary-filled, when hovered, it should display properly', async ({
+    mount,
+  }) => {
+    const result = await mount(
+      GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly
+    );
+    const button = result.locator('onx-button');
+
+    await button.hover();
+
+    await expect(result).toHaveScreenshot();
+  });
+
   test('given button is disabled, when rendered, it should display properly', async ({ mount }) => {
     const result = await mount(
       GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly

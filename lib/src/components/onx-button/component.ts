@@ -1,4 +1,4 @@
-import OnxComponent from './onx-component';
+import OnxComponent from '../onx-component';
 
 export default class OnxButton extends OnxComponent {
   static formAssociated = true;
@@ -204,6 +204,8 @@ export default class OnxButton extends OnxComponent {
 
     this.shadowRoot.appendChild(styles);
     this.shadowRoot.appendChild(this.button);
+
+    console.log('rendered');
   }
 
   connectedCallback() {

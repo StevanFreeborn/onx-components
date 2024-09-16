@@ -8,11 +8,12 @@ export class GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayPrope
     super();
   }
 
-  createElementUnderTest() {
+  connectedCallback() {
     const button = new OnxButton();
     button.variant = 'primary-filled';
     button.textContent = 'Primary Filled';
-    return button;
+
+    this.appendChild(button);
   }
 }
 
@@ -27,13 +28,12 @@ export class GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisp
   }
 
   connectedCallback() {
-    const button = document.createElement('onx-button');
+    const button = new OnxButton();
     button.variant = 'primary-filled';
     button.textContent = 'Primary Filled';
     button.disabled = true;
 
-    this.wrapper.appendChild(button);
-    this.appendChild(this.wrapper);
+    this.appendChild(button);
   }
 }
 

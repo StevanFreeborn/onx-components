@@ -1,4 +1,4 @@
-import OnxComponent from '@/components/onx-button/onx-component';
+import OnxComponent from '@/components/onx-component';
 
 export default abstract class OnxIcon extends OnxComponent {
   get height() {
