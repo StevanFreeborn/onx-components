@@ -78,7 +78,9 @@ export default class OnxButton extends OnxComponent {
     }
 
     .${OnxButton.variants.secondarySmOutlined},
-    .${OnxButton.variants.secondarySmFilled} {
+    .${OnxButton.variants.secondarySmFilled},
+    .${OnxButton.variants.secondaryMdOutlined},
+    .${OnxButton.variants.secondaryMdFilled} {
       color: var(--gray-dark-gray);
 
       /* TODO: Be on look out for this border style/color else where */
@@ -86,17 +88,26 @@ export default class OnxButton extends OnxComponent {
     }
 
     .${OnxButton.variants.secondarySmOutlined}:hover,
-    .${OnxButton.variants.secondarySmFilled}:hover {
+    .${OnxButton.variants.secondarySmFilled}:hover,
+    .${OnxButton.variants.secondaryMdOutlined}:hover,
+    .${OnxButton.variants.secondaryMdFilled}:hover {
       background-color: var(--state-hover-orange);
     }
 
     .${OnxButton.variants.secondarySmOutlined},
+    .${OnxButton.variants.secondaryMdOutlined},
     .${OnxButton.variants.secondarySmOutlinedWarning} {
       background-color: transparent;
     }
 
-    .${OnxButton.variants.secondarySmFilled} {
+    .${OnxButton.variants.secondarySmFilled},
+    .${OnxButton.variants.secondaryMdFilled} {
       background-color: var(--gray-lighter-gray);
+    }
+
+    .${OnxButton.variants.secondaryMdOutlined},
+    .${OnxButton.variants.secondaryMdFilled} {
+      padding: 0.125rem 0.625rem;
     }
 
     .${OnxButton.variants.secondarySmOutlinedWarning} {
