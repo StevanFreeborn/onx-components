@@ -1,15 +1,11 @@
 export abstract class SnapshotTestCase extends HTMLElement {
+  protected wrapper: HTMLElement;
+
   constructor() {
     super();
-  }
-
-  abstract createElementUnderTest(): HTMLElement;
-
-  connectedCallback() {
-    this.style.display = 'block';
-    this.style.width = 'max-content';
-    this.style.padding = '1rem';
-
-    this.appendChild(this.createElementUnderTest());
+    this.wrapper = document.createElement('div');
+    this.wrapper.style.display = 'block';
+    this.wrapper.style.width = 'max-content';
+    this.wrapper.style.padding = '1rem';
   }
 }

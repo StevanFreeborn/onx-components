@@ -3,6 +3,7 @@ import {
   GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm,
   GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm,
   GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly,
+  GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly,
 } from './onx-button.cases';
 
 test.describe('OnxButton', () => {
@@ -16,6 +17,18 @@ test.describe('OnxButton', () => {
 
     await expect(button).toHaveText('Primary Filled');
     await expect(button).toHaveAttribute('variant', 'primary-filled');
+    await expect(result).toHaveScreenshot();
+  });
+
+  test('given button is disabled, when rendered, it should display properly', async ({ mount }) => {
+    const result = await mount(
+      GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly
+    );
+    const button = result.locator('onx-button');
+
+    await expect(button).toHaveText('Primary Filled');
+    await expect(button).toHaveAttribute('variant', 'primary-filled');
+    await expect(button).toHaveAttribute('disabled');
     await expect(result).toHaveScreenshot();
   });
 

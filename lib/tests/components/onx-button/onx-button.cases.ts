@@ -1,7 +1,7 @@
 import '../../../src/components/onx-button';
 import { SnapshotTestCase } from '../../utils.cs/snapshot-test-case';
-import '../../../src/components/onx-component';
 import { getRandomCaseName } from '../../utils.cs/utils';
+import OnxButton from '../../../src/components/onx-button/component';
 
 export class GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly extends SnapshotTestCase {
   constructor() {
@@ -9,7 +9,7 @@ export class GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayPrope
   }
 
   createElementUnderTest() {
-    const button = document.createElement('onx-button');
+    const button = new OnxButton();
     button.variant = 'primary-filled';
     button.textContent = 'Primary Filled';
     return button;
@@ -21,13 +21,34 @@ customElements.define(
   GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly
 );
 
-export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends HTMLElement {
+export class GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly extends SnapshotTestCase {
   constructor() {
     super();
   }
 
   connectedCallback() {
     const button = document.createElement('onx-button');
+    button.variant = 'primary-filled';
+    button.textContent = 'Primary Filled';
+    button.disabled = true;
+
+    this.wrapper.appendChild(button);
+    this.appendChild(this.wrapper);
+  }
+}
+
+customElements.define(
+  getRandomCaseName(),
+  GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly
+);
+
+export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    const button = new OnxButton();
     button.type = 'reset';
     button.textContent = 'Reset';
 
@@ -50,7 +71,7 @@ export class GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm extends HTML
   }
 
   connectedCallback() {
-    const button = document.createElement('onx-button');
+    const button = new OnxButton();
     button.textContent = 'Submit';
 
     const form = document.createElement('form');

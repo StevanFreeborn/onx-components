@@ -129,20 +129,7 @@ export default abstract class OnxComponent extends HTMLElement {
     });
   }
 
-  private static createBaseStyles() {
-    const styleElement = document.createElement('style');
-    styleElement.innerHTML = OnxComponent.baseStyles;
-
-    return styleElement;
-  }
-
-  protected abstract template: string;
-
-  private renderTemplate() {
-    const templateElement = document.createElement('template');
-    templateElement.innerHTML = this.template;
-    return templateElement.content;
-  }
+  protected abstract render(): void;
 
   constructor() {
     super();
@@ -154,8 +141,7 @@ export default abstract class OnxComponent extends HTMLElement {
   connectedCallback() {
     const css = new CSSStyleSheet();
     css.replaceSync(OnxComponent.baseStyles);
-
     this.shadowRoot.adoptedStyleSheets.push(css);
-    this.shadowRoot.appendChild(this.renderTemplate());
+    this.render();
   }
 }

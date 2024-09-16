@@ -1,4 +1,4 @@
-import OnxComponent from '@/components/onx-component';
+import OnxComponent from '@/components/onx-button/onx-component';
 
 export default abstract class OnxIcon extends OnxComponent {
   get height() {
@@ -6,6 +6,7 @@ export default abstract class OnxIcon extends OnxComponent {
   }
 
   set height(value: string) {
+    this.svg.setAttribute('height', value);
     this.setAttribute('height', value);
   }
 
@@ -14,11 +15,18 @@ export default abstract class OnxIcon extends OnxComponent {
   }
 
   set width(value: string) {
+    this.svg.setAttribute('width', value);
     this.setAttribute('width', value);
   }
 
+  protected abstract svg: SVGElement;
+
   constructor() {
     super();
+  }
+
+  protected render() {
+    this.shadowRoot.appendChild(this.svg);
   }
 
   private static obsAttributes = {
