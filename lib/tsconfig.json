@@ -12,11 +12,7 @@
     "rootDir": "./",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/components/*": ["./src/components/*"],
-      "@/icons/*": ["./src/icons/*"]
-    }
+    "baseUrl": "./"
   },
   "include": ["src/**/*", "tests/**/*", "stories/**/*"]
 }
