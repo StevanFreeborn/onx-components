@@ -15,8 +15,8 @@
     "watch:rollup": "npm run clean && rollup -c -w",
     "format:fix": "eslint --ext .ts . --fix --ignore-path ../.gitignore && prettier \"**/*.ts\" --write --ignore-path ../.gitignore",
     "lint:fix": "eslint --ext .ts . --ignore-path ../.gitignore && prettier \"**/*.ts\" --check --ignore-path ../.gitignore",
-    "test": "playwright test -c ./tests/playwright-ct.config.ts",
-    "test-report": "playwright show-report"
+    "test": "tsc && wtr",
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
   },
   "keywords": [],
   "author": "Stevan Freeborn",
@@ -34,6 +34,8 @@
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
     "@web/test-runner": "^0.19.0",
+    "@web/test-runner-visual-regression": "^0.9.0",
+    "concurrently": "^9.0.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
@@ -44,7 +46,8 @@
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "@web/test-runner-playwright": "^0.11.0"
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {
@@ -99,8 +102,5 @@
     "bracketSameLine": false,
     "embeddedLanguageFormatting": "auto",
     "endOfLine": "auto"
-  },
-  "dependencies": {
-    "@web/test-runner-playwright": "^0.11.0"
   }
 }

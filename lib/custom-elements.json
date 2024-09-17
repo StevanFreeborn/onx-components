@@ -27,6 +27,24 @@
     },
     {
       "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/index.ts",
       "declarations": [],
       "exports": [
@@ -609,6 +627,160 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/onx-check-circle/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxCheckCircle",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-check-circle'",
+              "type": {
+                "text": "'onx-check-circle'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <g id=\"check-circle\" clip-path=\"url(#clip0_2618_383)\"> <path id=\"Vector\" d=\"M6 0C2.6865 0 0 2.6865 0 6C0 9.3135 2.6865 12 6 12C9.3135 12 12 9.3135 12 6C12 2.6865 9.3135 0 6 0ZM5.07 8.76825L2.30925 6.0075L3.36975 4.947L5.06925 6.648L8.676 3.04125L9.7365 4.10175L5.07 8.769V8.76825Z\" fill=\"currentColor\"/> </g> <defs> <clipPath id=\"clip0_2618_383\"> <rect width=\"12\" height=\"12\" fill=\"currentColor\"/> </clipPath> </defs> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxCheckCircle",
+            "module": "src/icons/onx-check-circle/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxCheckCircle",
+            "module": "src/icons/onx-check-circle/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-check-circle/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/onx-caret-down/icon.ts",
       "declarations": [
         {
@@ -757,160 +929,6 @@
     {
       "kind": "javascript-module",
       "path": "src/icons/onx-caret-down/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./icon.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icons/onx-check-circle/icon.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "OnxCheckCircle",
-          "members": [
-            {
-              "kind": "field",
-              "name": "tagName",
-              "static": true,
-              "default": "'onx-check-circle'",
-              "type": {
-                "text": "'onx-check-circle'"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "svg",
-              "type": {
-                "text": "SVGElement"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OnxIcon",
-                "module": "src/icons/onx-icon.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "innerHTML",
-              "default": "` <g id=\"check-circle\" clip-path=\"url(#clip0_2618_383)\"> <path id=\"Vector\" d=\"M6 0C2.6865 0 0 2.6865 0 6C0 9.3135 2.6865 12 6 12C9.3135 12 12 9.3135 12 6C12 2.6865 9.3135 0 6 0ZM5.07 8.76825L2.30925 6.0075L3.36975 4.947L5.06925 6.648L8.676 3.04125L9.7365 4.10175L5.07 8.769V8.76825Z\" fill=\"currentColor\"/> </g> <defs> <clipPath id=\"clip0_2618_383\"> <rect width=\"12\" height=\"12\" fill=\"currentColor\"/> </clipPath> </defs> `"
-            },
-            {
-              "kind": "field",
-              "name": "_obsAttributes",
-              "type": {
-                "text": "object"
-              },
-              "privacy": "private",
-              "static": true,
-              "default": "{ height: 'height', width: 'width', }",
-              "inheritedFrom": {
-                "name": "OnxIcon",
-                "module": "src/icons/onx-icon.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "height",
-              "inheritedFrom": {
-                "name": "OnxIcon",
-                "module": "src/icons/onx-icon.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "width",
-              "inheritedFrom": {
-                "name": "OnxIcon",
-                "module": "src/icons/onx-icon.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_fontImports",
-              "type": {
-                "text": "array"
-              },
-              "privacy": "private",
-              "static": true,
-              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_baseStyles",
-              "privacy": "private",
-              "static": true,
-              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_importFonts",
-              "privacy": "private",
-              "static": true,
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OnxIcon",
-            "module": "/src/icons/onx-icon.js"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "OnxCheckCircle",
-            "module": "src/icons/onx-check-circle/icon.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "declaration": {
-            "name": "OnxCheckCircle",
-            "module": "src/icons/onx-check-circle/icon.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icons/onx-check-circle/index.ts",
       "declarations": [],
       "exports": [
         {
