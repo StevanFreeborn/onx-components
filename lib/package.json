@@ -14,7 +14,8 @@
     "custom-elements.json"
   ],
   "scripts": {
-    "analyze": "cem analyze --exclude dist --exclude node_modules --exclude tests",
+    "cem": "cem",
+    "analyze": "cem analyze --globs src/**/*.ts",
     "clean": "rimraf ./dist",
     "build:tsc": "npm run clean && tsc && npm run analyze",
     "build:rollup": "npm run clean && rollup -c && npm run analyze",
