@@ -2,6 +2,8 @@
   "editor.formatOnSave": true,
   "typescript.preferences.importModuleSpecifierEnding": "js",
   "cSpell.words": [
+    "autodocs",
+    "camelcase",
     "Roboto",
     "tseslint"
   ],

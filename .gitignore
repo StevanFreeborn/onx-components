@@ -5,3 +5,4 @@ coverage/
 **/*/failed/
 
 *storybook.log
+*.tgz
