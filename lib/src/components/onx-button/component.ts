@@ -1,7 +1,9 @@
 import OnxComponent from '../onx-component.js';
 
+export type OnxButtonVariant = (typeof OnxButton.variants)[keyof typeof OnxButton.variants];
+
 export default class OnxButton extends OnxComponent {
-  private static _variants = {
+  static variants = {
     primaryFilled: 'primary-filled',
     primaryFilledSuccess: 'primary-filled-success',
     primaryFilledWarning: 'primary-filled-warning',
@@ -16,7 +18,7 @@ export default class OnxButton extends OnxComponent {
 
     secondarySmOutlinedWarning: 'secondary-sm-outlined-warning',
     link: 'link',
-  };
+  } as const;
 
   private static _styles = /* css */ `
   button {
@@ -39,79 +41,79 @@ export default class OnxButton extends OnxComponent {
     pointer-events: none;
   }
 
-  .${OnxButton._variants.primaryFilled},
-  .${OnxButton._variants.primaryFilledSuccess},
-  .${OnxButton._variants.primaryFilledWarning} {
+  .${OnxButton.variants.primaryFilled},
+  .${OnxButton.variants.primaryFilledSuccess},
+  .${OnxButton.variants.primaryFilledWarning} {
     color: var(--primary-white);
   }
 
-  .${OnxButton._variants.primaryFilled} {
+  .${OnxButton.variants.primaryFilled} {
     background-color: var(--primary-light-blue);
   }
 
-  .${OnxButton._variants.primaryFilled}:hover {
+  .${OnxButton.variants.primaryFilled}:hover {
     background-color: var(--state-hover-blue);
   }
 
-  .${OnxButton._variants.primaryFilled}:disabled {
+  .${OnxButton.variants.primaryFilled}:disabled {
     background-color: var(--state-disabled-blue);
   }
 
-  .${OnxButton._variants.primaryFilledSuccess} {
+  .${OnxButton.variants.primaryFilledSuccess} {
     background-color: var(--status-success);
   }
 
-  .${OnxButton._variants.primaryFilledSuccess}:hover {
+  .${OnxButton.variants.primaryFilledSuccess}:hover {
     background-color: var(--state-hover-success);
   }
 
-  .${OnxButton._variants.primaryFilledWarning} {
+  .${OnxButton.variants.primaryFilledWarning} {
     background-color: var(--status-error);
   }
 
-  .${OnxButton._variants.primaryFilledWarning}:hover {
+  .${OnxButton.variants.primaryFilledWarning}:hover {
     background-color: var(--state-hover-error);
   }
 
-  .${OnxButton._variants.secondarySmOutlined},
-  .${OnxButton._variants.secondarySmFilled},
-  .${OnxButton._variants.secondaryMdOutlined},
-  .${OnxButton._variants.secondaryMdFilled} {
+  .${OnxButton.variants.secondarySmOutlined},
+  .${OnxButton.variants.secondarySmFilled},
+  .${OnxButton.variants.secondaryMdOutlined},
+  .${OnxButton.variants.secondaryMdFilled} {
     color: var(--gray-dark-gray);
 
     /* TODO: Be on look out for this border style/color else where */
-    border: 1px solid #ACB0BB; 
+    border: 1px solid #ACB0BB;
   }
 
-  .${OnxButton._variants.secondarySmOutlined}:hover,
-  .${OnxButton._variants.secondarySmFilled}:hover,
-  .${OnxButton._variants.secondaryMdOutlined}:hover,
-  .${OnxButton._variants.secondaryMdFilled}:hover {
+  .${OnxButton.variants.secondarySmOutlined}:hover,
+  .${OnxButton.variants.secondarySmFilled}:hover,
+  .${OnxButton.variants.secondaryMdOutlined}:hover,
+  .${OnxButton.variants.secondaryMdFilled}:hover {
     background-color: var(--state-hover-orange);
   }
 
-  .${OnxButton._variants.secondarySmOutlined},
-  .${OnxButton._variants.secondaryMdOutlined},
-  .${OnxButton._variants.secondarySmOutlinedWarning} {
+  .${OnxButton.variants.secondarySmOutlined},
+  .${OnxButton.variants.secondaryMdOutlined},
+  .${OnxButton.variants.secondarySmOutlinedWarning} {
     background-color: transparent;
   }
 
-  .${OnxButton._variants.secondarySmFilled},
-  .${OnxButton._variants.secondaryMdFilled} {
+  .${OnxButton.variants.secondarySmFilled},
+  .${OnxButton.variants.secondaryMdFilled} {
     background-color: var(--gray-lighter-gray);
   }
 
-  .${OnxButton._variants.secondaryMdOutlined},
-  .${OnxButton._variants.secondaryMdFilled} {
+  .${OnxButton.variants.secondaryMdOutlined},
+  .${OnxButton.variants.secondaryMdFilled} {
     padding: 0.125rem 0.625rem;
   }
 
-  .${OnxButton._variants.secondarySmOutlinedWarning} {
+  .${OnxButton.variants.secondarySmOutlinedWarning} {
     color: var(--status-error);
     border: 1px solid var(--status-error);
   }
 
-  .${OnxButton._variants.secondarySmOutlinedWarning}:hover {
+  .${OnxButton.variants.secondarySmOutlinedWarning}:hover {
     color: var(--state-hover-error);
     border-color: var(--state-hover-error);
   }
@@ -154,11 +156,11 @@ export default class OnxButton extends OnxComponent {
   }
 
   get variant(): string {
-    return this.getAttribute(OnxButton._obsAttributes.variant) || OnxButton._variants.primaryFilled;
+    return this.getAttribute(OnxButton._obsAttributes.variant) || OnxButton.variants.primaryFilled;
   }
 
   set variant(value: string) {
-    const isValid = Object.values(OnxButton._variants).includes(value);
+    const isValid = Object.values(OnxButton.variants).includes(value as OnxButtonVariant);
 
     if (isValid === false) {
       console.warn(`Ignored setting because variant invalid: ${value}.`);

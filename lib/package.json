@@ -16,29 +16,42 @@
     "format:fix": "eslint --ext .ts . --fix --ignore-path ../.gitignore && prettier \"**/*.ts\" --write --ignore-path ../.gitignore",
     "lint:fix": "eslint --ext .ts . --ignore-path ../.gitignore && prettier \"**/*.ts\" --check --ignore-path ../.gitignore",
     "test": "tsc && wtr",
-    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "storybook": "npm run build:tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"storybook dev -p 6006\"",
+    "storybook:build": "npm run build:tsc && storybook build"
   },
   "keywords": [],
   "author": "Stevan Freeborn",
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
     "@custom-elements-manifest/analyzer": "^0.10.3",
     "@open-wc/eslint-config": "^12.0.3",
     "@open-wc/testing": "^4.0.0",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@sand4rt/experimental-ct-web": "^1.47.0",
+    "@storybook/addon-essentials": "^8.3.1",
+    "@storybook/addon-links": "^8.3.1",
+    "@storybook/blocks": "^8.3.1",
+    "@storybook/test": "^8.3.1",
+    "@storybook/web-components": "^8.3.1",
+    "@storybook/web-components-vite": "^8.3.1",
     "@types/mocha": "^10.0.8",
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
+    "@web/dev-server": "^0.4.6",
     "@web/test-runner": "^0.19.0",
+    "@web/test-runner-playwright": "^0.11.0",
     "@web/test-runner-visual-regression": "^0.9.0",
     "concurrently": "^9.0.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "lit": "^3.2.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "rollup": "^4.21.3",
@@ -46,8 +59,8 @@
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.6.2",
-    "@web/test-runner-playwright": "^0.11.0"
+    "storybook": "^8.3.1",
+    "typescript": "^5.6.2"
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {
@@ -62,7 +75,8 @@
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "@open-wc",
-      "prettier"
+      "prettier",
+      "plugin:storybook/recommended"
     ],
     "plugins": [
       "@typescript-eslint"
