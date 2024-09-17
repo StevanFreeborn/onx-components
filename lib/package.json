@@ -25,12 +25,15 @@
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.10.3",
     "@open-wc/eslint-config": "^12.0.3",
+    "@open-wc/testing": "^4.0.0",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@sand4rt/experimental-ct-web": "^1.47.0",
+    "@types/mocha": "^10.0.8",
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
+    "@web/test-runner": "^0.19.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
@@ -96,5 +99,8 @@
     "bracketSameLine": false,
     "embeddedLanguageFormatting": "auto",
     "endOfLine": "auto"
+  },
+  "dependencies": {
+    "@web/test-runner-playwright": "^0.11.0"
   }
 }
