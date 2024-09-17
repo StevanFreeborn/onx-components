@@ -1,13 +1,9 @@
-import '../../../src/components/onx-button';
-import { SnapshotTestCase } from '../../utils.cs/snapshot-test-case';
-import { getRandomCaseName } from '../../utils.cs/utils';
-import OnxButton from '../../../src/components/onx-button/component';
+import '../../../src/components/onx-button/index.js';
+import { SnapshotTestCase } from '../../utils.cs/snapshot-test-case.js';
+import { getRandomCaseName } from '../../utils.cs/utils.js';
+import OnxButton from '../../../src/components/onx-button/component.js';
 
 export class GivenButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly extends SnapshotTestCase {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     const button = new OnxButton();
     button.variant = 'primary-filled';
@@ -23,10 +19,6 @@ customElements.define(
 );
 
 export class GivenDisabledButtonWithPrimaryFillVariant_WhenRendered_ItShouldDisplayProperly extends SnapshotTestCase {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     const button = new OnxButton();
     button.variant = 'primary-filled';
@@ -43,10 +35,6 @@ customElements.define(
 );
 
 export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     const button = new OnxButton();
     button.type = 'reset';
@@ -66,10 +54,6 @@ export class GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm extends HTMLEl
 customElements.define(getRandomCaseName(), GivenButtonTypeIsReset_WhenClicked_ItShouldResetForm);
 
 export class GivenButtonTypeIsSubmit_WhenClicked_ItShouldSubmitForm extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     const button = new OnxButton();
     button.textContent = 'Submit';

@@ -1,0 +1,1235 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./components/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icons/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-button/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/onx-component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]"
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `"
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxComponent",
+            "module": "src/components/onx-component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-check-circle/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-trash/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-create/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-add/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-caret-down/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }"
+            },
+            {
+              "kind": "field",
+              "name": "height"
+            },
+            {
+              "kind": "field",
+              "name": "width"
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxComponent",
+            "module": "/src/components/onx-component.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxIcon",
+            "module": "src/icons/onx-icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/onx-button/component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_variants",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ primaryFilled: 'primary-filled', primaryFilledSuccess: 'primary-filled-success', primaryFilledWarning: 'primary-filled-warning', secondarySmFilled: 'secondary-sm-filled', secondaryMdFilled: 'secondary-md-filled', secondaryLgFilled: 'secondary-lg-filled', secondarySmOutlined: 'secondary-sm-outlined', secondaryMdOutlined: 'secondary-md-outlined', secondaryLgOutlined: 'secondary-lg-outlined', secondarySmOutlinedWarning: 'secondary-sm-outlined-warning', link: 'link', }"
+            },
+            {
+              "kind": "field",
+              "name": "_styles",
+              "privacy": "private",
+              "static": true,
+              "default": "` button { display: inline-flex; padding: 0rem 0.625rem; justify-content: center; align-items: center; gap: 0.25rem; border-radius: 0.3125rem; text-align: center; font-size: 0.8125rem; font-style: normal; font-weight: 500; line-height: 1.375rem; letter-spacing: 0.01563rem; } button:disabled { pointer-events: none; } .${OnxButton._variants.primaryFilled}, .${OnxButton._variants.primaryFilledSuccess}, .${OnxButton._variants.primaryFilledWarning} { color: var(--primary-white); } .${OnxButton._variants.primaryFilled} { background-color: var(--primary-light-blue); } .${OnxButton._variants.primaryFilled}:hover { background-color: var(--state-hover-blue); } .${OnxButton._variants.primaryFilled}:disabled { background-color: var(--state-disabled-blue); } .${OnxButton._variants.primaryFilledSuccess} { background-color: var(--status-success); } .${OnxButton._variants.primaryFilledSuccess}:hover { background-color: var(--state-hover-success); } .${OnxButton._variants.primaryFilledWarning} { background-color: var(--status-error); } .${OnxButton._variants.primaryFilledWarning}:hover { background-color: var(--state-hover-error); } .${OnxButton._variants.secondarySmOutlined}, .${OnxButton._variants.secondarySmFilled}, .${OnxButton._variants.secondaryMdOutlined}, .${OnxButton._variants.secondaryMdFilled} { color: var(--gray-dark-gray); /* TODO: Be on look out for this border style/color else where */ border: 1px solid #ACB0BB; } .${OnxButton._variants.secondarySmOutlined}:hover, .${OnxButton._variants.secondarySmFilled}:hover, .${OnxButton._variants.secondaryMdOutlined}:hover, .${OnxButton._variants.secondaryMdFilled}:hover { background-color: var(--state-hover-orange); } .${OnxButton._variants.secondarySmOutlined}, .${OnxButton._variants.secondaryMdOutlined}, .${OnxButton._variants.secondarySmOutlinedWarning} { background-color: transparent; } .${OnxButton._variants.secondarySmFilled}, .${OnxButton._variants.secondaryMdFilled} { background-color: var(--gray-lighter-gray); } .${OnxButton._variants.secondaryMdOutlined}, .${OnxButton._variants.secondaryMdFilled} { padding: 0.125rem 0.625rem; } .${OnxButton._variants.secondarySmOutlinedWarning} { color: var(--status-error); border: 1px solid var(--status-error); } .${OnxButton._variants.secondarySmOutlinedWarning}:hover { color: var(--state-hover-error); border-color: var(--state-hover-error); } `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ type: 'type', variant: 'variant', disabled: 'disabled', }"
+            },
+            {
+              "kind": "field",
+              "name": "_button",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-button'",
+              "type": {
+                "text": "'onx-button'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "types",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ submit: 'submit', reset: 'reset', button: 'button', }"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_submitForm",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_resetForm",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxComponent",
+            "module": "/src/components/onx-component.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxButton",
+            "module": "src/components/onx-button/component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxButton",
+            "module": "src/components/onx-button/component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/onx-button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./component.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-add/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxAdd",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-add'",
+              "type": {
+                "text": "'onx-add'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "default": "'16'",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "default": "'16'",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <path id=\"add\" d=\"M9.34277 2.6875V6.84473H13.5V9.51953H9.34277V13.6875H6.68945V9.51953H2.5V6.84473H6.68945V2.6875H9.34277Z\" fill=\"currentColor\"/> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxAdd",
+            "module": "src/icons/onx-add/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxAdd",
+            "module": "src/icons/onx-add/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-add/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-caret-down/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxCaretDown",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-caret-down'",
+              "type": {
+                "text": "'onx-caret-down'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "type": {
+                "text": "string"
+              },
+              "default": "'16'",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "string"
+              },
+              "default": "'16'",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <path id=\"caret-down\" d=\"M8 10L5 5.5H11L8 10Z\" fill=\"currentColor\"/> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxCaretDown",
+            "module": "src/icons/onx-caret-down/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxCaretDown",
+            "module": "src/icons/onx-caret-down/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-caret-down/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-check-circle/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxCheckCircle",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-check-circle'",
+              "type": {
+                "text": "'onx-check-circle'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <g id=\"check-circle\" clip-path=\"url(#clip0_2618_383)\"> <path id=\"Vector\" d=\"M6 0C2.6865 0 0 2.6865 0 6C0 9.3135 2.6865 12 6 12C9.3135 12 12 9.3135 12 6C12 2.6865 9.3135 0 6 0ZM5.07 8.76825L2.30925 6.0075L3.36975 4.947L5.06925 6.648L8.676 3.04125L9.7365 4.10175L5.07 8.769V8.76825Z\" fill=\"currentColor\"/> </g> <defs> <clipPath id=\"clip0_2618_383\"> <rect width=\"12\" height=\"12\" fill=\"currentColor\"/> </clipPath> </defs> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxCheckCircle",
+            "module": "src/icons/onx-check-circle/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxCheckCircle",
+            "module": "src/icons/onx-check-circle/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-check-circle/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-create/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxCreate",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-create'",
+              "type": {
+                "text": "'onx-create'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <g id=\"create\" clip-path=\"url(#clip0_2622_460)\"> <path id=\"Vector\" d=\"M5.2875 2.25V5.2875H2.25V6.75H5.2875V9.7875H6.75V6.75H9.75V5.2875H6.7125V2.25H5.2875ZM6 0C9.3135 0 12 2.6865 12 6C12 9.3135 9.3135 12 6 12C2.6865 12 0 9.3135 0 6C0.00975 2.69025 2.691 0.00975 6 0Z\" fill=\"currentColor\"/> </g> <defs> <clipPath id=\"clip0_2622_460\"> <rect width=\"12\" height=\"12\" fill=\"currentColor\"/> </clipPath> </defs> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxCreate",
+            "module": "src/icons/onx-create/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxCreate",
+            "module": "src/icons/onx-create/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-create/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-trash/icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxTrash",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "static": true,
+              "default": "'onx-trash'",
+              "type": {
+                "text": "'onx-trash'"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "svg",
+              "type": {
+                "text": "SVGElement"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "innerHTML",
+              "default": "` <g id=\"trash\"> <path id=\"Vector\" d=\"M3.97717 0H8.02192V1.74H10.4339V3.288H1.56592V1.74H3.97792L3.97717 0ZM1.56592 4.704H10.4339L9.40192 12H2.59792L1.56592 4.704ZM4.58992 0.6V1.74H7.40992V0.6H4.58992Z\" fill=\"currentColor\"/> </g> `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "{ height: 'height', width: 'width', }",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "inheritedFrom": {
+                "name": "OnxIcon",
+                "module": "src/icons/onx-icon.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxIcon",
+            "module": "/src/icons/onx-icon.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OnxTrash",
+            "module": "src/icons/onx-trash/icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxTrash",
+            "module": "src/icons/onx-trash/icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-trash/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icon.js"
+          }
+        }
+      ]
+    }
+  ]
+}

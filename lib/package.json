@@ -7,13 +7,14 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "analyze": "cem analyze --exclude dist --exclude node_modules --exclude tests",
     "clean": "rimraf ./dist",
-    "build:tsc": "npm run clean && tsc",
-    "build:rollup": "npm run clean && rollup -c",
+    "build:tsc": "npm run clean && tsc && npm run analyze",
+    "build:rollup": "npm run clean && rollup -c && npm run analyze",
     "watch:tsc": "npm run clean && tsc -w",
     "watch:rollup": "npm run clean && rollup -c -w",
-    "format:fix": "prettier --write .",
-    "lint:fix": "eslint --fix .",
+    "format:fix": "eslint --ext .ts . --fix --ignore-path ../.gitignore && prettier \"**/*.ts\" --write --ignore-path ../.gitignore",
+    "lint:fix": "eslint --ext .ts . --ignore-path ../.gitignore && prettier \"**/*.ts\" --check --ignore-path ../.gitignore",
     "test": "playwright test -c ./tests/playwright-ct.config.ts",
     "test-report": "playwright show-report"
   },
@@ -22,11 +23,17 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.3",
+    "@open-wc/eslint-config": "^12.0.3",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@sand4rt/experimental-ct-web": "^1.47.0",
     "@types/node": "^22.5.5",
-    "eslint": "^9.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.30.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "rollup": "^4.21.3",
@@ -34,7 +41,60 @@
     "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.5.0"
+    "typescript": "^5.6.2"
+  },
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "globals": {
+      "ElementInternals": "readonly"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "@open-wc",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error",
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ],
+      "max-classes-per-file": "off",
+      "camelcase": "off",
+      "@typescript-eslint/no-floating-promises": "error",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.spec.ts",
+            "**/*/playwright-ct.config.ts"
+          ]
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "embeddedLanguageFormatting": "auto",
+    "endOfLine": "auto"
   }
 }

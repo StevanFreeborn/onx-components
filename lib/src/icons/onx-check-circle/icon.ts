@@ -1,7 +1,8 @@
-import OnxIcon from '../onx-icon';
+import OnxIcon from '../onx-icon.js';
 
 export default class OnxCheckCircle extends OnxIcon {
   static tagName = 'onx-check-circle' as const;
+
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
   constructor() {
@@ -22,18 +23,9 @@ export default class OnxCheckCircle extends OnxIcon {
       </defs>
     `;
   }
-
-  static defineElement() {
-    if (customElements.get(OnxCheckCircle.tagName)) {
-      console.warn(`${OnxCheckCircle.tagName} is already defined`);
-      return;
-    }
-
-    customElements.define(OnxCheckCircle.tagName, OnxCheckCircle);
-  }
 }
 
-OnxCheckCircle.defineElement();
+customElements.define(OnxCheckCircle.tagName, OnxCheckCircle);
 
 declare global {
   interface HTMLElementTagNameMap {

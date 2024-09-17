@@ -1,11 +1,7 @@
-import OnxComponent from '../onx-component';
+import OnxComponent from '../onx-component.js';
 
 export default class OnxButton extends OnxComponent {
-  static formAssociated = true;
-  private internals: ElementInternals;
-
-  static tagName = 'onx-button' as const;
-  static variants = {
+  private static _variants = {
     primaryFilled: 'primary-filled',
     primaryFilledSuccess: 'primary-filled-success',
     primaryFilledWarning: 'primary-filled-warning',
@@ -19,107 +15,121 @@ export default class OnxButton extends OnxComponent {
     secondaryLgOutlined: 'secondary-lg-outlined',
 
     secondarySmOutlinedWarning: 'secondary-sm-outlined-warning',
-    ghost: 'ghost',
+    link: 'link',
   };
 
-  private static styles = /* css */ `
-    button {
-      display: inline-flex;
-      padding: 0rem 0.625rem;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-      border-radius: 0.3125rem;
+  private static _styles = /* css */ `
+  button {
+    display: inline-flex;
+    padding: 0rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.3125rem;
 
-      text-align: center;
-      font-size: 0.8125rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.375rem;
-      letter-spacing: 0.01563rem;
-    }
+    text-align: center;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.375rem;
+    letter-spacing: 0.01563rem;
+  }
 
-    button:disabled {
-      pointer-events: none;
-    }
+  button:disabled {
+    pointer-events: none;
+  }
 
-    .${OnxButton.variants.primaryFilled},
-    .${OnxButton.variants.primaryFilledSuccess},
-    .${OnxButton.variants.primaryFilledWarning} {
-      color: var(--primary-white);
-    }
+  .${OnxButton._variants.primaryFilled},
+  .${OnxButton._variants.primaryFilledSuccess},
+  .${OnxButton._variants.primaryFilledWarning} {
+    color: var(--primary-white);
+  }
 
-    .${OnxButton.variants.primaryFilled} {
-      background-color: var(--primary-light-blue);
-    }
+  .${OnxButton._variants.primaryFilled} {
+    background-color: var(--primary-light-blue);
+  }
 
-    .${OnxButton.variants.primaryFilled}:hover {
-      background-color: var(--state-hover-blue);
-    }
+  .${OnxButton._variants.primaryFilled}:hover {
+    background-color: var(--state-hover-blue);
+  }
 
-    .${OnxButton.variants.primaryFilled}:disabled {
-      background-color: var(--state-disabled-blue);
-    }
+  .${OnxButton._variants.primaryFilled}:disabled {
+    background-color: var(--state-disabled-blue);
+  }
 
-    .${OnxButton.variants.primaryFilledSuccess} {
-      background-color: var(--status-success);
-    }
+  .${OnxButton._variants.primaryFilledSuccess} {
+    background-color: var(--status-success);
+  }
 
-    .${OnxButton.variants.primaryFilledSuccess}:hover {
-      background-color: var(--state-hover-success);
-    }
+  .${OnxButton._variants.primaryFilledSuccess}:hover {
+    background-color: var(--state-hover-success);
+  }
 
-    .${OnxButton.variants.primaryFilledWarning} {
-      background-color: var(--status-error);
-    }
+  .${OnxButton._variants.primaryFilledWarning} {
+    background-color: var(--status-error);
+  }
 
-    .${OnxButton.variants.primaryFilledWarning}:hover {
-      background-color: var(--state-hover-error);
-    }
+  .${OnxButton._variants.primaryFilledWarning}:hover {
+    background-color: var(--state-hover-error);
+  }
 
-    .${OnxButton.variants.secondarySmOutlined},
-    .${OnxButton.variants.secondarySmFilled},
-    .${OnxButton.variants.secondaryMdOutlined},
-    .${OnxButton.variants.secondaryMdFilled} {
-      color: var(--gray-dark-gray);
+  .${OnxButton._variants.secondarySmOutlined},
+  .${OnxButton._variants.secondarySmFilled},
+  .${OnxButton._variants.secondaryMdOutlined},
+  .${OnxButton._variants.secondaryMdFilled} {
+    color: var(--gray-dark-gray);
 
-      /* TODO: Be on look out for this border style/color else where */
-      border: 1px solid #ACB0BB; 
-    }
+    /* TODO: Be on look out for this border style/color else where */
+    border: 1px solid #ACB0BB; 
+  }
 
-    .${OnxButton.variants.secondarySmOutlined}:hover,
-    .${OnxButton.variants.secondarySmFilled}:hover,
-    .${OnxButton.variants.secondaryMdOutlined}:hover,
-    .${OnxButton.variants.secondaryMdFilled}:hover {
-      background-color: var(--state-hover-orange);
-    }
+  .${OnxButton._variants.secondarySmOutlined}:hover,
+  .${OnxButton._variants.secondarySmFilled}:hover,
+  .${OnxButton._variants.secondaryMdOutlined}:hover,
+  .${OnxButton._variants.secondaryMdFilled}:hover {
+    background-color: var(--state-hover-orange);
+  }
 
-    .${OnxButton.variants.secondarySmOutlined},
-    .${OnxButton.variants.secondaryMdOutlined},
-    .${OnxButton.variants.secondarySmOutlinedWarning} {
-      background-color: transparent;
-    }
+  .${OnxButton._variants.secondarySmOutlined},
+  .${OnxButton._variants.secondaryMdOutlined},
+  .${OnxButton._variants.secondarySmOutlinedWarning} {
+    background-color: transparent;
+  }
 
-    .${OnxButton.variants.secondarySmFilled},
-    .${OnxButton.variants.secondaryMdFilled} {
-      background-color: var(--gray-lighter-gray);
-    }
+  .${OnxButton._variants.secondarySmFilled},
+  .${OnxButton._variants.secondaryMdFilled} {
+    background-color: var(--gray-lighter-gray);
+  }
 
-    .${OnxButton.variants.secondaryMdOutlined},
-    .${OnxButton.variants.secondaryMdFilled} {
-      padding: 0.125rem 0.625rem;
-    }
+  .${OnxButton._variants.secondaryMdOutlined},
+  .${OnxButton._variants.secondaryMdFilled} {
+    padding: 0.125rem 0.625rem;
+  }
 
-    .${OnxButton.variants.secondarySmOutlinedWarning} {
-      color: var(--status-error);
-      border: 1px solid var(--status-error);
-    }
+  .${OnxButton._variants.secondarySmOutlinedWarning} {
+    color: var(--status-error);
+    border: 1px solid var(--status-error);
+  }
 
-    .${OnxButton.variants.secondarySmOutlinedWarning}:hover {
-      color: var(--state-hover-error);
-      border-color: var(--state-hover-error);
-    }
-  `;
+  .${OnxButton._variants.secondarySmOutlinedWarning}:hover {
+    color: var(--state-hover-error);
+    border-color: var(--state-hover-error);
+  }
+`;
+
+  private static _obsAttributes = {
+    type: 'type',
+    variant: 'variant',
+    disabled: 'disabled',
+  };
+
+  private _button = document.createElement('button');
+
+  private _internals: ElementInternals;
+
+  static formAssociated = true;
+
+  static tagName = 'onx-button' as const;
 
   static types = {
     submit: 'submit',
@@ -127,10 +137,8 @@ export default class OnxButton extends OnxComponent {
     button: 'button',
   };
 
-  private button = document.createElement('button');
-
   get type(): string {
-    return this.getAttribute('type') || 'submit';
+    return this.getAttribute(OnxButton._obsAttributes.type) || 'submit';
   }
 
   set type(value: string) {
@@ -141,91 +149,83 @@ export default class OnxButton extends OnxComponent {
       return;
     }
 
-    this.button.setAttribute('type', value);
-    this.setAttribute('type', value);
+    this._button.setAttribute(OnxButton._obsAttributes.type, value);
+    this.setAttribute(OnxButton._obsAttributes.type, value);
   }
 
   get variant(): string {
-    return this.getAttribute('variant') || OnxButton.variants.primaryFilled;
+    return this.getAttribute(OnxButton._obsAttributes.variant) || OnxButton._variants.primaryFilled;
   }
 
   set variant(value: string) {
-    const isValid = Object.values(OnxButton.variants).includes(value);
+    const isValid = Object.values(OnxButton._variants).includes(value);
 
     if (isValid === false) {
       console.warn(`Ignored setting because variant invalid: ${value}.`);
       return;
     }
 
-    this.button.classList.replace(this.variant, value);
-    this.setAttribute('variant', value);
+    this._button.classList.replace(this.variant, value);
+    this.setAttribute(OnxButton._obsAttributes.variant, value);
   }
 
   get disabled(): boolean {
-    return this.hasAttribute('disabled');
+    return this.hasAttribute(OnxButton._obsAttributes.disabled);
   }
 
   set disabled(value: boolean) {
     if (value) {
-      this.setAttribute('disabled', '');
-      this.button.setAttribute('disabled', '');
+      this.setAttribute(OnxButton._obsAttributes.disabled, '');
+      this._button.setAttribute(OnxButton._obsAttributes.disabled, '');
       return;
     }
 
-    this.removeAttribute('disabled');
-    this.button.removeAttribute('disabled');
+    this.removeAttribute(OnxButton._obsAttributes.disabled);
+    this._button.removeAttribute(OnxButton._obsAttributes.disabled);
   }
 
-  static defineElement() {
-    if (customElements.get(OnxButton.tagName)) {
-      console.warn(`${OnxButton.tagName} is already defined`);
-      return;
-    }
-
-    customElements.define(OnxButton.tagName, OnxButton);
+  private _submitForm() {
+    this._internals.form?.requestSubmit();
   }
 
-  private submitForm() {
-    this.internals.form?.requestSubmit();
-  }
-
-  private resetForm() {
-    this.internals.form?.reset();
+  private _resetForm() {
+    this._internals.form?.reset();
   }
 
   constructor() {
     super();
 
-    this.button.classList.add(this.variant);
-    this.button.setAttribute('type', this.type);
+    this._button.classList.add(this.variant);
+    this._button.setAttribute(OnxButton._obsAttributes.type, this.type);
 
     if (this.disabled) {
-      this.button.setAttribute('disabled', '');
+      this._button.setAttribute(OnxButton._obsAttributes.disabled, '');
     }
 
-    this.internals = this.attachInternals();
+    this._internals = this.attachInternals();
+
+    this._submitForm = this._submitForm.bind(this);
+    this._resetForm = this._resetForm.bind(this);
   }
 
   protected render() {
     const slot = document.createElement('slot');
-    this.button.appendChild(slot);
+    this._button.appendChild(slot);
 
     const styles = document.createElement('style');
-    styles.textContent = OnxButton.styles;
+    styles.textContent = OnxButton._styles;
 
     this.shadowRoot?.appendChild(styles);
-    this.shadowRoot?.appendChild(this.button);
-
-    console.log('rendered');
+    this.shadowRoot?.appendChild(this._button);
   }
 
   connectedCallback() {
     if (this.type === 'submit') {
-      this.addEventListener('click', this.submitForm);
+      this.addEventListener('click', this._submitForm);
     }
 
     if (this.type === 'reset') {
-      this.addEventListener('click', this.resetForm);
+      this.addEventListener('click', this._resetForm);
     }
 
     super.connectedCallback();
@@ -233,22 +233,16 @@ export default class OnxButton extends OnxComponent {
 
   disconnectedCallback() {
     if (this.type === 'submit') {
-      this.removeEventListener('click', this.submitForm);
+      this.removeEventListener('click', this._submitForm);
     }
 
     if (this.type === 'reset') {
-      this.removeEventListener('click', this.resetForm);
+      this.removeEventListener('click', this._resetForm);
     }
   }
 
-  private static obsAttributes = {
-    type: 'type',
-    variant: 'variant',
-    disabled: 'disabled',
-  };
-
   static get observedAttributes() {
-    return Object.values(OnxButton.obsAttributes);
+    return Object.values(OnxButton._obsAttributes);
   }
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
@@ -257,20 +251,22 @@ export default class OnxButton extends OnxComponent {
     }
 
     switch (name) {
-      case OnxButton.obsAttributes.type:
+      case OnxButton._obsAttributes.type:
         this.type = newValue;
         break;
-      case OnxButton.obsAttributes.variant:
+      case OnxButton._obsAttributes.variant:
         this.variant = newValue;
         break;
-      case OnxButton.obsAttributes.disabled:
+      case OnxButton._obsAttributes.disabled:
         this.disabled = newValue !== null;
+        break;
+      default:
         break;
     }
   }
 }
 
-OnxButton.defineElement();
+customElements.define(OnxButton.tagName, OnxButton);
 
 declare global {
   interface HTMLElementTagNameMap {

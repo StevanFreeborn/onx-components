@@ -1,7 +1,8 @@
-import OnxIcon from '../onx-icon';
+import OnxIcon from '../onx-icon.js';
 
 export default class OnxCreate extends OnxIcon {
   static tagName = 'onx-create' as const;
+
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
   constructor() {
@@ -22,18 +23,9 @@ export default class OnxCreate extends OnxIcon {
       </defs>
     `;
   }
-
-  static defineElement() {
-    if (customElements.get(OnxCreate.tagName)) {
-      console.warn(`${OnxCreate.tagName} is already defined`);
-      return;
-    }
-
-    customElements.define(OnxCreate.tagName, OnxCreate);
-  }
 }
 
-OnxCreate.defineElement();
+customElements.define(OnxCreate.tagName, OnxCreate);
 
 declare global {
   interface HTMLElementTagNameMap {

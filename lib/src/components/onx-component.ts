@@ -1,8 +1,9 @@
 export default abstract class OnxComponent extends HTMLElement {
-  private static fontImports = [
+  private static _fontImports = [
     'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap',
   ];
-  private static baseStyles = /* css */ `
+
+  private static _baseStyles = /* css */ `
     :host {
       --primary-blue: #194488;
       --primary-light-blue: #4A87E3;
@@ -116,8 +117,8 @@ export default abstract class OnxComponent extends HTMLElement {
     }
   `;
 
-  private static importFonts() {
-    OnxComponent.fontImports.forEach(font => {
+  private static _importFonts() {
+    OnxComponent._fontImports.forEach(font => {
       if (document.querySelector(`link[href="${font}"]`)) {
         return;
       }
@@ -133,14 +134,13 @@ export default abstract class OnxComponent extends HTMLElement {
 
   constructor() {
     super();
-
-    OnxComponent.importFonts();
     this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
+    OnxComponent._importFonts();
     const css = new CSSStyleSheet();
-    css.replaceSync(OnxComponent.baseStyles);
+    css.replaceSync(OnxComponent._baseStyles);
     this.shadowRoot?.adoptedStyleSheets.push(css);
     this.render();
   }

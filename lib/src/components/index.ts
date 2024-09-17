@@ -1,1 +1,1 @@
-export * from './onx-button';
+export * from './onx-button/index.js';

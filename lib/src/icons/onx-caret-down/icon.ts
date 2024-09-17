@@ -1,7 +1,8 @@
-import OnxIcon from '../onx-icon';
+import OnxIcon from '../onx-icon.js';
 
 export default class OnxCaretDown extends OnxIcon {
   static tagName = 'onx-caret-down' as const;
+
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
   constructor() {
@@ -18,18 +19,9 @@ export default class OnxCaretDown extends OnxIcon {
       <path id="caret-down" d="M8 10L5 5.5H11L8 10Z" fill="currentColor"/>
     `;
   }
-
-  static defineElement() {
-    if (customElements.get(OnxCaretDown.tagName)) {
-      console.warn(`${OnxCaretDown.tagName} is already defined`);
-      return;
-    }
-
-    customElements.define(OnxCaretDown.tagName, OnxCaretDown);
-  }
 }
 
-OnxCaretDown.defineElement();
+customElements.define(OnxCaretDown.tagName, OnxCaretDown);
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,41 +1,33 @@
-import OnxComponent from '../components/onx-component';
+import OnxComponent from '../components/onx-component.js';
 
 export default abstract class OnxIcon extends OnxComponent {
+  private static _obsAttributes = {
+    height: 'height',
+    width: 'width',
+  };
+
   get height() {
-    return this.getAttribute('height') || '12';
+    return this.getAttribute(OnxIcon._obsAttributes.height) || '12';
   }
 
   set height(value: string) {
-    this.svg.setAttribute('height', value);
-    this.setAttribute('height', value);
+    this.svg.setAttribute(OnxIcon._obsAttributes.height, value);
+    this.setAttribute(OnxIcon._obsAttributes.height, value);
   }
 
   get width() {
-    return this.getAttribute('width') || '12';
+    return this.getAttribute(OnxIcon._obsAttributes.width) || '12';
   }
 
   set width(value: string) {
-    this.svg.setAttribute('width', value);
-    this.setAttribute('width', value);
+    this.svg.setAttribute(OnxIcon._obsAttributes.width, value);
+    this.setAttribute(OnxIcon._obsAttributes.width, value);
   }
 
   protected abstract svg: SVGElement;
 
-  constructor() {
-    super();
-  }
-
   protected render() {
     this.shadowRoot?.appendChild(this.svg);
-  }
-
-  private static obsAttributes = {
-    height: 'height',
-    width: 'width',
-  } as const;
-
-  static get observedAttributes() {
-    return Object.values(OnxIcon.obsAttributes);
   }
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
@@ -44,11 +36,13 @@ export default abstract class OnxIcon extends OnxComponent {
     }
 
     switch (name) {
-      case OnxIcon.obsAttributes.height:
+      case OnxIcon._obsAttributes.height:
         this.height = newValue;
         break;
-      case OnxIcon.obsAttributes.width:
+      case OnxIcon._obsAttributes.width:
         this.width = newValue;
+        break;
+      default:
         break;
     }
   }
