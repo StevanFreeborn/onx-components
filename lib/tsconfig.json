@@ -14,5 +14,5 @@
     "skipLibCheck": true,
     "baseUrl": "./"
   },
-  "include": ["src/**/*", "tests/**/*", "stories/**/*"]
+  "include": ["src/**/*", "tests/**/*", "stories/**/*", "stories"]
 }

@@ -1,6 +1,6 @@
 import OnxIcon from '../onx-icon.js';
 
-export default class OnxCaretDown extends OnxIcon {
+export class OnxCaretDown extends OnxIcon {
   static tagName = 'onx-caret-down' as const;
 
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

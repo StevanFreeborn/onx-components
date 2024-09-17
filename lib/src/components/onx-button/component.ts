@@ -1,8 +1,9 @@
 import OnxComponent from '../onx-component.js';
 
 export type OnxButtonVariant = (typeof OnxButton.variants)[keyof typeof OnxButton.variants];
+export type OnxButtonType = (typeof OnxButton.types)[keyof typeof OnxButton.types];
 
-export default class OnxButton extends OnxComponent {
+export class OnxButton extends OnxComponent {
   static variants = {
     primaryFilled: 'primary-filled',
     primaryFilledSuccess: 'primary-filled-success',
@@ -137,16 +138,18 @@ export default class OnxButton extends OnxComponent {
     submit: 'submit',
     reset: 'reset',
     button: 'button',
-  };
+  } as const;
 
-  get type(): string {
-    return this.getAttribute(OnxButton._obsAttributes.type) || 'submit';
+  get type(): OnxButtonType {
+    const currentAttribute = this.getAttribute(OnxButton._obsAttributes.type) as OnxButtonType;
+    return currentAttribute || OnxButton.types.submit;
   }
 
-  set type(value: string) {
+  set type(value: OnxButtonType) {
     const isValid = Object.values(OnxButton.types).includes(value);
 
     if (isValid === false) {
+      // eslint-disable-next-line no-console
       console.warn(`Ignored setting because type invalid: ${value}.`);
       return;
     }
@@ -155,14 +158,18 @@ export default class OnxButton extends OnxComponent {
     this.setAttribute(OnxButton._obsAttributes.type, value);
   }
 
-  get variant(): string {
-    return this.getAttribute(OnxButton._obsAttributes.variant) || OnxButton.variants.primaryFilled;
+  get variant(): OnxButtonVariant {
+    const currentAttribute = this.getAttribute(
+      OnxButton._obsAttributes.variant
+    ) as OnxButtonVariant;
+    return currentAttribute || OnxButton.variants.primaryFilled;
   }
 
-  set variant(value: string) {
-    const isValid = Object.values(OnxButton.variants).includes(value as OnxButtonVariant);
+  set variant(value: OnxButtonVariant) {
+    const isValid = Object.values(OnxButton.variants).includes(value);
 
     if (isValid === false) {
+      // eslint-disable-next-line no-console
       console.warn(`Ignored setting because variant invalid: ${value}.`);
       return;
     }
@@ -254,10 +261,10 @@ export default class OnxButton extends OnxComponent {
 
     switch (name) {
       case OnxButton._obsAttributes.type:
-        this.type = newValue;
+        this.type = newValue as OnxButtonType;
         break;
       case OnxButton._obsAttributes.variant:
-        this.variant = newValue;
+        this.variant = newValue as OnxButtonVariant;
         break;
       case OnxButton._obsAttributes.disabled:
         this.disabled = newValue !== null;

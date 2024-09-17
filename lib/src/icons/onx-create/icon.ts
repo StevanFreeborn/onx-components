@@ -1,6 +1,6 @@
 import OnxIcon from '../onx-icon.js';
 
-export default class OnxCreate extends OnxIcon {
+export class OnxCreate extends OnxIcon {
   static tagName = 'onx-create' as const;
 
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

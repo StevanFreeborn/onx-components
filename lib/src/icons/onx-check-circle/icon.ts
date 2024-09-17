@@ -1,6 +1,6 @@
 import OnxIcon from '../onx-icon.js';
 
-export default class OnxCheckCircle extends OnxIcon {
+export class OnxCheckCircle extends OnxIcon {
   static tagName = 'onx-check-circle' as const;
 
   protected svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

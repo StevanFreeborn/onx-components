@@ -2,10 +2,17 @@
   "name": "onx-components",
   "private": true,
   "version": "0.0.0",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "License.md",
+    "package.json",
+    "custom-elements.json"
+  ],
   "scripts": {
     "analyze": "cem analyze --exclude dist --exclude node_modules --exclude tests",
     "clean": "rimraf ./dist",
@@ -18,7 +25,8 @@
     "test": "tsc && wtr",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "npm run build:tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"storybook dev -p 6006\"",
-    "storybook:build": "npm run build:tsc && storybook build"
+    "storybook:build": "npm run build:tsc && storybook build",
+    "prepare": "npm run clean && tsc --project tsconfig.build.json && npm run analyze"
   },
   "keywords": [],
   "author": "Stevan Freeborn",
@@ -64,9 +72,12 @@
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {
+    "ignorePatterns": [
+      "rollup.config.js"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "project": "./tsconfig.json"
+      "project": "./lib/tsconfig.json"
     },
     "globals": {
       "ElementInternals": "readonly"
@@ -82,6 +93,7 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "no-use-before-define": "off",
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "error",
       "import/no-unresolved": "off",
@@ -100,7 +112,7 @@
         {
           "devDependencies": [
             "**/*.spec.ts",
-            "**/*/playwright-ct.config.ts"
+            "**/*.stories.ts"
           ]
         }
       ]
