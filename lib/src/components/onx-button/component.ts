@@ -15,6 +15,7 @@ export class OnxButton extends OnxComponent {
 
     secondaryOutlinedWarning: 'secondary-outlined-warning',
     link: 'link',
+    icon: 'icon',
   };
 
   static readonly sizes = {
@@ -91,7 +92,8 @@ export class OnxButton extends OnxComponent {
     }
 
     .${OnxButton.variants.secondaryFilled},
-    .${OnxButton.variants.secondaryOutlined} {
+    .${OnxButton.variants.secondaryOutlined},
+    .${OnxButton.variants.icon} {
       color: var(--gray-dark-gray);
 
       /* TODO: Be on look out for this border style/color else where */
@@ -129,6 +131,17 @@ export class OnxButton extends OnxComponent {
 
     .${OnxButton.variants.link}:hover {
       text-decoration: underline;
+    }
+
+    .${OnxButton.variants.icon} {
+      width: 1.875rem;
+      height: 1.875rem;
+      border: 1px solid var(--gray-light-gray);
+      background-color: var(--primary-white);
+    }
+
+    .${OnxButton.variants.icon}:hover {
+      background-color: var(--state-hover-orange);
     }
   `;
 

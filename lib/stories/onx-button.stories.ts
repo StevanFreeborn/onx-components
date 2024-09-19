@@ -180,6 +180,14 @@ export const Link: Story = {
   },
 };
 
+export const Icon: Story = {
+  ...Default,
+  args: {
+    variant: OnxButton.variants.icon,
+    slot: /* html */ `<onx-icon name="expand"></onx-icon>`,
+  },
+};
+
 export const SubmitForm: Story = {
   ...Default,
   args: {
