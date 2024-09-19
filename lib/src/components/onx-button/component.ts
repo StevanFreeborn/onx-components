@@ -5,6 +5,8 @@ export type OnxButtonType = (typeof OnxButton.types)[keyof typeof OnxButton.type
 export type OnxButtonSize = (typeof OnxButton.sizes)[keyof typeof OnxButton.sizes];
 
 export class OnxButton extends OnxComponent {
+  static readonly tagName = 'onx-button';
+
   static readonly variants = {
     primaryFilled: 'primary-filled',
     primaryFilledSuccess: 'primary-filled-success',
@@ -163,8 +165,6 @@ export class OnxButton extends OnxComponent {
   private _internals: ElementInternals;
 
   static formAssociated = true;
-
-  static readonly tagName = 'onx-button';
 
   get type(): OnxButtonType {
     const currentAttribute = this.getAttribute(OnxButton._obsAttributes.type) as OnxButtonType;

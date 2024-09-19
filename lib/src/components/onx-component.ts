@@ -35,6 +35,8 @@ export default abstract class OnxComponent extends HTMLElement {
       font-size: 16px;
       font-family: Roboto, Arial, Helvetica, sans-serif;
       font-style: normal;
+
+      --box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     * {
