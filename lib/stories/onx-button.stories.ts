@@ -13,13 +13,14 @@ const preview: Meta = {
   component: 'onx-button',
 };
 
+export default preview;
+
 type Args = {
   variant: OnxButtonVariant;
   disabled: boolean;
   type: OnxButtonType;
   size: OnxButtonSize;
   slot: string;
-  inline: boolean;
 };
 
 type Story = StoryObj<Args>;
@@ -63,13 +64,6 @@ export const Default: Story = {
       description: 'The button size',
       table: {
         defaultValue: { summary: OnxButton.sizes.sm },
-      },
-    },
-    inline: {
-      control: { type: 'boolean' },
-      description: 'Whether the icon should be display inline-block',
-      table: {
-        defaultValue: { summary: 'false' },
       },
     },
     slot: {
@@ -186,16 +180,63 @@ export const Link: Story = {
   },
 };
 
-// export const SubmitForm: Story = {
-//   ...Default,
-//   args: { type: OnxButton.types.submit },
-//   render: args => {},
-// };
+export const SubmitForm: Story = {
+  ...Default,
+  args: {
+    type: OnxButton.types.submit,
+    slot: 'Submit',
+  },
+  render: args => {
+    const container = document.createElement('div');
+    container.innerHTML = /* html */ `
+      <form>
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" />
+        <onx-button type="${args.type}">
+          ${args.slot}
+        </onx-button>
+      </form>
+    `;
 
-// export const ResetForm: Story = {
-//   ...Default,
-//   args: { type: OnxButton.types.reset },
-//   render: args => {},
-// };
+    const form = container.querySelector('form');
 
-export default preview;
+    form?.addEventListener('submit', event => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      // eslint-disable-next-line no-alert
+      alert(`Hello, ${formData.get('name')}!`);
+    });
+
+    return container;
+  },
+};
+
+export const ResetForm: Story = {
+  ...Default,
+  args: {
+    type: OnxButton.types.reset,
+    variant: OnxButton.variants.secondaryOutlinedWarning,
+    slot: 'Reset',
+  },
+  render: args => {
+    const container = document.createElement('div');
+    container.innerHTML = /* html */ `
+      <form>
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" />
+        <onx-button type="${args.type}" variant="${args.variant}">
+          ${args.slot}
+        </onx-button>
+      </form>
+    `;
+
+    const form = container.querySelector('form');
+
+    form?.addEventListener('reset', () => {
+      // eslint-disable-next-line no-alert
+      alert('Form will now be reset');
+    });
+
+    return container;
+  },
+};
