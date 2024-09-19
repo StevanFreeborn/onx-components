@@ -4,6 +4,10 @@ export default abstract class OnxComponent extends HTMLElement {
   ];
 
   private static _baseStyles = /* css */ `
+    :host:not(:defined) {
+      visibility: hidden;
+    }
+
     :host {
       --primary-blue: #194488;
       --primary-light-blue: #4A87E3;

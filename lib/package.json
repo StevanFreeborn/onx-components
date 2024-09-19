@@ -78,7 +78,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "project": "./lib/tsconfig.json"
+      "project": "**/tsconfig.json"
     },
     "globals": {
       "ElementInternals": "readonly"
@@ -128,6 +128,7 @@
     "arrowParens": "avoid",
     "bracketSameLine": false,
     "embeddedLanguageFormatting": "auto",
-    "endOfLine": "auto"
+    "endOfLine": "auto",
+    "singleAttributePerLine": true
   }
 }

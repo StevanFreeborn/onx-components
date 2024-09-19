@@ -1,0 +1,5 @@
+export default /* html */ `
+  <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="grip-vertical">
+    <path id="grip-vertical" d="M3.3125 0.9375H7.0625V4.6875H3.3125V0.9375ZM8.9375 0.9375H12.6875V4.6875H8.9375V0.9375ZM3.3125 6.5625H7.0625V10.3125H3.3125V6.5625ZM8.9375 6.5625H12.6875V10.3125H8.9375V6.5625ZM3.3125 12.1875H7.0625V15.9375H3.3125V12.1875ZM8.9375 12.1875H12.6875V15.9375H8.9375V12.1875Z" fill="currentColor"></path>
+  </svg>
+`;

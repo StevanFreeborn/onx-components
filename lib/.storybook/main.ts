@@ -7,6 +7,18 @@ const config: StorybookConfig = {
     name: '@storybook/web-components-vite',
     options: {},
   },
+  viteFinal: config => {
+    config.root = process.cwd();
+    config.server = {
+      ...config.server,
+      watch: {
+        usePolling: true,
+        interval: 100,
+      },
+    };
+
+    return config;
+  },
 };
 
 export default config;

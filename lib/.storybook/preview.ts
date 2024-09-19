@@ -6,6 +6,7 @@ setCustomElementsManifest(customElements);
 
 const preview: Preview = {
   parameters: {
+    layout: 'centered',
     controls: {
       expanded: true,
       matchers: {

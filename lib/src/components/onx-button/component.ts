@@ -2,128 +2,147 @@ import OnxComponent from '../onx-component.js';
 
 export type OnxButtonVariant = (typeof OnxButton.variants)[keyof typeof OnxButton.variants];
 export type OnxButtonType = (typeof OnxButton.types)[keyof typeof OnxButton.types];
+export type OnxButtonSize = (typeof OnxButton.sizes)[keyof typeof OnxButton.sizes];
 
 export class OnxButton extends OnxComponent {
-  static variants = {
+  static readonly variants = {
     primaryFilled: 'primary-filled',
     primaryFilledSuccess: 'primary-filled-success',
     primaryFilledWarning: 'primary-filled-warning',
 
-    secondarySmFilled: 'secondary-sm-filled',
-    secondaryMdFilled: 'secondary-md-filled',
-    secondaryLgFilled: 'secondary-lg-filled',
+    secondaryFilled: 'secondary-filled',
+    secondaryOutlined: 'secondary-outlined',
 
-    secondarySmOutlined: 'secondary-sm-outlined',
-    secondaryMdOutlined: 'secondary-md-outlined',
-    secondaryLgOutlined: 'secondary-lg-outlined',
-
-    secondarySmOutlinedWarning: 'secondary-sm-outlined-warning',
+    secondaryOutlinedWarning: 'secondary-outlined-warning',
     link: 'link',
-  } as const;
+  };
 
-  private static _styles = /* css */ `
-  button {
-    display: inline-flex;
-    padding: 0rem 0.625rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    border-radius: 0.3125rem;
+  static readonly sizes = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+  };
 
-    text-align: center;
-    font-size: 0.8125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.375rem;
-    letter-spacing: 0.01563rem;
-  }
+  private static readonly _styles = /* css */ `
+    button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: 0.3125rem;
 
-  button:disabled {
-    pointer-events: none;
-  }
+      text-align: center;
+      font-size: 0.8125rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.375rem;
+      letter-spacing: 0.01563rem;
+    }
 
-  .${OnxButton.variants.primaryFilled},
-  .${OnxButton.variants.primaryFilledSuccess},
-  .${OnxButton.variants.primaryFilledWarning} {
-    color: var(--primary-white);
-  }
+    button:disabled {
+      pointer-events: none;
+    }
 
-  .${OnxButton.variants.primaryFilled} {
-    background-color: var(--primary-light-blue);
-  }
+    .${OnxButton.sizes.sm} {
+      padding: 0rem 0.625rem;
+    }
 
-  .${OnxButton.variants.primaryFilled}:hover {
-    background-color: var(--state-hover-blue);
-  }
+    .${OnxButton.sizes.md} {
+      padding: 0.125rem 0.625rem;
+    }
 
-  .${OnxButton.variants.primaryFilled}:disabled {
-    background-color: var(--state-disabled-blue);
-  }
+    .${OnxButton.sizes.lg} {
+      padding: 0.375rem 0.75rem;
+      gap: 0.375rem;
+    }
 
-  .${OnxButton.variants.primaryFilledSuccess} {
-    background-color: var(--status-success);
-  }
+    .${OnxButton.variants.primaryFilled},
+    .${OnxButton.variants.primaryFilledSuccess},
+    .${OnxButton.variants.primaryFilledWarning} {
+      color: var(--primary-white);
+    }
 
-  .${OnxButton.variants.primaryFilledSuccess}:hover {
-    background-color: var(--state-hover-success);
-  }
+    .${OnxButton.variants.primaryFilled} {
+      background-color: var(--primary-light-blue);
+    }
 
-  .${OnxButton.variants.primaryFilledWarning} {
-    background-color: var(--status-error);
-  }
+    .${OnxButton.variants.primaryFilled}:hover {
+      background-color: var(--state-hover-blue);
+    }
 
-  .${OnxButton.variants.primaryFilledWarning}:hover {
-    background-color: var(--state-hover-error);
-  }
+    .${OnxButton.variants.primaryFilled}:disabled {
+      background-color: var(--state-disabled-blue);
+    }
 
-  .${OnxButton.variants.secondarySmOutlined},
-  .${OnxButton.variants.secondarySmFilled},
-  .${OnxButton.variants.secondaryMdOutlined},
-  .${OnxButton.variants.secondaryMdFilled} {
-    color: var(--gray-dark-gray);
+    .${OnxButton.variants.primaryFilledSuccess} {
+      background-color: var(--status-success);
+    }
 
-    /* TODO: Be on look out for this border style/color else where */
-    border: 1px solid #ACB0BB;
-  }
+    .${OnxButton.variants.primaryFilledSuccess}:hover {
+      background-color: var(--state-hover-success);
+    }
 
-  .${OnxButton.variants.secondarySmOutlined}:hover,
-  .${OnxButton.variants.secondarySmFilled}:hover,
-  .${OnxButton.variants.secondaryMdOutlined}:hover,
-  .${OnxButton.variants.secondaryMdFilled}:hover {
-    background-color: var(--state-hover-orange);
-  }
+    .${OnxButton.variants.primaryFilledWarning} {
+      background-color: var(--status-error);
+    }
 
-  .${OnxButton.variants.secondarySmOutlined},
-  .${OnxButton.variants.secondaryMdOutlined},
-  .${OnxButton.variants.secondarySmOutlinedWarning} {
-    background-color: transparent;
-  }
+    .${OnxButton.variants.primaryFilledWarning}:hover {
+      background-color: var(--state-hover-error);
+    }
 
-  .${OnxButton.variants.secondarySmFilled},
-  .${OnxButton.variants.secondaryMdFilled} {
-    background-color: var(--gray-lighter-gray);
-  }
+    .${OnxButton.variants.secondaryFilled},
+    .${OnxButton.variants.secondaryOutlined} {
+      color: var(--gray-dark-gray);
 
-  .${OnxButton.variants.secondaryMdOutlined},
-  .${OnxButton.variants.secondaryMdFilled} {
-    padding: 0.125rem 0.625rem;
-  }
+      /* TODO: Be on look out for this border style/color else where */
+      border: 1px solid #ACB0BB;
+    }
 
-  .${OnxButton.variants.secondarySmOutlinedWarning} {
-    color: var(--status-error);
-    border: 1px solid var(--status-error);
-  }
+    .${OnxButton.variants.secondaryFilled}:hover,
+    .${OnxButton.variants.secondaryOutlined}:hover {
+      background-color: var(--state-hover-orange);
+    }
 
-  .${OnxButton.variants.secondarySmOutlinedWarning}:hover {
-    color: var(--state-hover-error);
-    border-color: var(--state-hover-error);
-  }
-`;
+    .${OnxButton.variants.secondaryOutlined},
+    .${OnxButton.variants.secondaryOutlinedWarning} {
+      background-color: transparent;
+    }
 
-  private static _obsAttributes = {
+    .${OnxButton.variants.secondaryFilled} {
+      background-color: var(--gray-lighter-gray);
+    }
+
+    .${OnxButton.variants.secondaryOutlinedWarning} {
+      color: var(--status-error);
+      border: 1px solid var(--status-error);
+    }
+
+    .${OnxButton.variants.secondaryOutlinedWarning}:hover {
+      color: var(--state-hover-error);
+      border-color: var(--state-hover-error);
+    }
+
+    .${OnxButton.variants.link} {
+      background-color: transparent;
+      color: var(--primary-light-blue);
+    }
+
+    .${OnxButton.variants.link}:hover {
+      text-decoration: underline;
+    }
+  `;
+
+  private static readonly _obsAttributes = {
     type: 'type',
     variant: 'variant',
     disabled: 'disabled',
+    size: 'size',
+  };
+
+  static readonly types = {
+    submit: 'submit',
+    reset: 'reset',
+    button: 'button',
   };
 
   private _button = document.createElement('button');
@@ -132,13 +151,7 @@ export class OnxButton extends OnxComponent {
 
   static formAssociated = true;
 
-  static tagName = 'onx-button' as const;
-
-  static types = {
-    submit: 'submit',
-    reset: 'reset',
-    button: 'button',
-  } as const;
+  static readonly tagName = 'onx-button';
 
   get type(): OnxButtonType {
     const currentAttribute = this.getAttribute(OnxButton._obsAttributes.type) as OnxButtonType;
@@ -162,6 +175,7 @@ export class OnxButton extends OnxComponent {
     const currentAttribute = this.getAttribute(
       OnxButton._obsAttributes.variant
     ) as OnxButtonVariant;
+
     return currentAttribute || OnxButton.variants.primaryFilled;
   }
 
@@ -193,6 +207,24 @@ export class OnxButton extends OnxComponent {
     this._button.removeAttribute(OnxButton._obsAttributes.disabled);
   }
 
+  get size(): OnxButtonSize {
+    const currentAttribute = this.getAttribute(OnxButton._obsAttributes.size) as OnxButtonSize;
+    return currentAttribute || OnxButton.sizes.sm;
+  }
+
+  set size(value: OnxButtonSize) {
+    const isValid = Object.values(OnxButton.sizes).includes(value);
+
+    if (isValid === false) {
+      // eslint-disable-next-line no-console
+      console.warn(`Ignored setting because size invalid: ${value}.`);
+      return;
+    }
+
+    this._button.classList.replace(this.size, value);
+    this.setAttribute(OnxButton._obsAttributes.size, value);
+  }
+
   private _submitForm() {
     this._internals.form?.requestSubmit();
   }
@@ -205,6 +237,7 @@ export class OnxButton extends OnxComponent {
     super();
 
     this._button.classList.add(this.variant);
+    this._button.classList.add(this.size);
     this._button.setAttribute(OnxButton._obsAttributes.type, this.type);
 
     if (this.disabled) {
@@ -268,6 +301,9 @@ export class OnxButton extends OnxComponent {
         break;
       case OnxButton._obsAttributes.disabled:
         this.disabled = newValue !== null;
+        break;
+      case OnxButton._obsAttributes.size:
+        this.size = newValue as OnxButtonSize;
         break;
       default:
         break;

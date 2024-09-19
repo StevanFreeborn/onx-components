@@ -1,5 +1,3 @@
-import { TemplateResult } from './../../node_modules/@open-wc/testing-helpers/types/src/scopedElementsWrapper.d';
-
 export function createScreenshotWrapper(element: string | Element) {
   const wrapper = document.createElement('div');
   wrapper.style.display = 'block';
