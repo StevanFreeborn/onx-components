@@ -1,12 +1,12 @@
 import OnxComponent from '../components/onx-component.js';
-import icons from './icons/index.js';
+import iconMap from './icons/index.js';
 
 export class OnxIcon extends OnxComponent {
   static readonly tagName = 'onx-icon';
 
-  private static icons = icons;
+  private static readonly _iconMap = iconMap;
 
-  private static _obsAttributes = {
+  private static readonly _obsAttributes = {
     height: 'height',
     width: 'width',
     name: 'name',
@@ -68,6 +68,12 @@ export class OnxIcon extends OnxComponent {
     }
   }
 
+  private static readonly _fallbackIcon = `
+    <svg viewBox="0 0 24 24">
+      <path d="M3,3 L21,3 L21,21 L3,21 L3,3 M3,3 L21,21 M21,3 L3,21" fill="none" stroke="currentColor" stroke-width="1"/>
+    </svg>
+  `;
+
   private _svg: SVGElement | null | undefined = null;
 
   private syncSvg() {
@@ -79,9 +85,17 @@ export class OnxIcon extends OnxComponent {
     }
   }
 
+  private useFallbackIcon() {
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = OnxIcon._fallbackIcon;
+      this._svg = this.shadowRoot.querySelector('svg');
+      this.syncSvg();
+    }
+  }
+
   protected render() {
-    if (this.name !== null && OnxIcon.icons[this.name]) {
-      OnxIcon.icons[this.name]()
+    if (this.name !== null && OnxIcon._iconMap[this.name]) {
+      OnxIcon._iconMap[this.name]()
         .then(iconModule => {
           if (this.shadowRoot) {
             this.shadowRoot.innerHTML = iconModule.default;
@@ -94,8 +108,14 @@ export class OnxIcon extends OnxComponent {
             // eslint-disable-next-line no-console
             console.error("Couldn't load icon", error.message);
           }
+
+          this.useFallbackIcon();
         });
+
+      return;
     }
+
+    this.useFallbackIcon();
   }
 
   static get observedAttributes() {

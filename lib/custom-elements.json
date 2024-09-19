@@ -27,6 +27,179 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./onx-icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/onx-icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "readonly": true,
+              "default": "'onx-icon'"
+            },
+            {
+              "kind": "field",
+              "name": "_iconMap",
+              "privacy": "private",
+              "static": true,
+              "readonly": true,
+              "default": "iconMap"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "readonly": true,
+              "default": "{ height: 'height', width: 'width', name: 'name', rotate: 'rotate', inline: 'inline', }"
+            },
+            {
+              "kind": "field",
+              "name": "height"
+            },
+            {
+              "kind": "field",
+              "name": "width"
+            },
+            {
+              "kind": "field",
+              "name": "rotate"
+            },
+            {
+              "kind": "field",
+              "name": "inline"
+            },
+            {
+              "kind": "field",
+              "name": "name"
+            },
+            {
+              "kind": "field",
+              "name": "_fallbackIcon",
+              "privacy": "private",
+              "static": true,
+              "default": "` <svg viewBox=\"0 0 24 24\"> <path d=\"M3,3 L21,3 L21,21 L3,21 L3,3 M3,3 L21,21 M21,3 L3,21\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/> </svg> `"
+            },
+            {
+              "kind": "field",
+              "name": "_svg",
+              "type": {
+                "text": "SVGElement | null | undefined"
+              },
+              "privacy": "private",
+              "default": "null"
+            },
+            {
+              "kind": "method",
+              "name": "syncSvg",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "useFallbackIcon",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host:not(:defined) { visibility: hidden; } :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxComponent",
+            "module": "/src/components/onx-component.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OnxIcon",
+          "declaration": {
+            "name": "OnxIcon",
+            "module": "src/icons/onx-icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxIcon",
+            "module": "src/icons/onx-icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/index.ts",
       "declarations": [],
       "exports": [
@@ -96,382 +269,6 @@
           "declaration": {
             "name": "OnxComponent",
             "module": "src/components/onx-component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icons/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./onx-icon.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icons/onx-icon.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "OnxIcon",
-          "members": [
-            {
-              "kind": "field",
-              "name": "tagName",
-              "type": {
-                "text": "string"
-              },
-              "static": true,
-              "readonly": true,
-              "default": "'onx-icon'"
-            },
-            {
-              "kind": "field",
-              "name": "icons",
-              "privacy": "private",
-              "static": true,
-              "default": "icons"
-            },
-            {
-              "kind": "field",
-              "name": "_obsAttributes",
-              "type": {
-                "text": "object"
-              },
-              "privacy": "private",
-              "static": true,
-              "default": "{ height: 'height', width: 'width', name: 'name', rotate: 'rotate', inline: 'inline', }"
-            },
-            {
-              "kind": "field",
-              "name": "height"
-            },
-            {
-              "kind": "field",
-              "name": "width"
-            },
-            {
-              "kind": "field",
-              "name": "rotate"
-            },
-            {
-              "kind": "field",
-              "name": "inline"
-            },
-            {
-              "kind": "field",
-              "name": "name"
-            },
-            {
-              "kind": "field",
-              "name": "_svg",
-              "type": {
-                "text": "SVGElement | null | undefined"
-              },
-              "privacy": "private",
-              "default": "null"
-            },
-            {
-              "kind": "method",
-              "name": "syncSvg",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_fontImports",
-              "type": {
-                "text": "array"
-              },
-              "privacy": "private",
-              "static": true,
-              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_baseStyles",
-              "privacy": "private",
-              "static": true,
-              "default": "` :host:not(:defined) { visibility: hidden; } :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_importFonts",
-              "privacy": "private",
-              "static": true,
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OnxComponent",
-            "module": "/src/components/onx-component.js"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "OnxIcon",
-          "declaration": {
-            "name": "OnxIcon",
-            "module": "src/icons/onx-icon.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "declaration": {
-            "name": "OnxIcon",
-            "module": "src/icons/onx-icon.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/onx-button/component.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "OnxButton",
-          "members": [
-            {
-              "kind": "field",
-              "name": "variants",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "readonly": true,
-              "default": "{ primaryFilled: 'primary-filled', primaryFilledSuccess: 'primary-filled-success', primaryFilledWarning: 'primary-filled-warning', secondaryFilled: 'secondary-filled', secondaryOutlined: 'secondary-outlined', secondaryOutlinedWarning: 'secondary-outlined-warning', link: 'link', }"
-            },
-            {
-              "kind": "field",
-              "name": "sizes",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "readonly": true,
-              "default": "{ sm: 'sm', md: 'md', lg: 'lg', }"
-            },
-            {
-              "kind": "field",
-              "name": "_styles",
-              "privacy": "private",
-              "static": true,
-              "readonly": true,
-              "default": "` button { display: inline-flex; justify-content: center; align-items: center; gap: 0.25rem; border-radius: 0.3125rem; text-align: center; font-size: 0.8125rem; font-style: normal; font-weight: 500; line-height: 1.375rem; letter-spacing: 0.01563rem; } button:disabled { pointer-events: none; } .${OnxButton.sizes.sm} { padding: 0rem 0.625rem; } .${OnxButton.sizes.md} { padding: 0.125rem 0.625rem; } .${OnxButton.sizes.lg} { padding: 0.375rem 0.75rem; gap: 0.375rem; } .${OnxButton.variants.primaryFilled}, .${OnxButton.variants.primaryFilledSuccess}, .${OnxButton.variants.primaryFilledWarning} { color: var(--primary-white); } .${OnxButton.variants.primaryFilled} { background-color: var(--primary-light-blue); } .${OnxButton.variants.primaryFilled}:hover { background-color: var(--state-hover-blue); } .${OnxButton.variants.primaryFilled}:disabled { background-color: var(--state-disabled-blue); } .${OnxButton.variants.primaryFilledSuccess} { background-color: var(--status-success); } .${OnxButton.variants.primaryFilledSuccess}:hover { background-color: var(--state-hover-success); } .${OnxButton.variants.primaryFilledWarning} { background-color: var(--status-error); } .${OnxButton.variants.primaryFilledWarning}:hover { background-color: var(--state-hover-error); } .${OnxButton.variants.secondaryFilled}, .${OnxButton.variants.secondaryOutlined} { color: var(--gray-dark-gray); /* TODO: Be on look out for this border style/color else where */ border: 1px solid #ACB0BB; } .${OnxButton.variants.secondaryFilled}:hover, .${OnxButton.variants.secondaryOutlined}:hover { background-color: var(--state-hover-orange); } .${OnxButton.variants.secondaryOutlined}, .${OnxButton.variants.secondaryOutlinedWarning} { background-color: transparent; } .${OnxButton.variants.secondaryFilled} { background-color: var(--gray-lighter-gray); } .${OnxButton.variants.secondaryOutlinedWarning} { color: var(--status-error); border: 1px solid var(--status-error); } .${OnxButton.variants.secondaryOutlinedWarning}:hover { color: var(--state-hover-error); border-color: var(--state-hover-error); } .${OnxButton.variants.link} { background-color: transparent; color: var(--primary-light-blue); } .${OnxButton.variants.link}:hover { text-decoration: underline; } `"
-            },
-            {
-              "kind": "field",
-              "name": "_obsAttributes",
-              "type": {
-                "text": "object"
-              },
-              "privacy": "private",
-              "static": true,
-              "readonly": true,
-              "default": "{ type: 'type', variant: 'variant', disabled: 'disabled', size: 'size', }"
-            },
-            {
-              "kind": "field",
-              "name": "types",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "readonly": true,
-              "default": "{ submit: 'submit', reset: 'reset', button: 'button', }"
-            },
-            {
-              "kind": "field",
-              "name": "_button",
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_internals",
-              "type": {
-                "text": "ElementInternals"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "formAssociated",
-              "type": {
-                "text": "boolean"
-              },
-              "static": true,
-              "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "tagName",
-              "type": {
-                "text": "string"
-              },
-              "static": true,
-              "readonly": true,
-              "default": "'onx-button'"
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "OnxButtonType"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "OnxButtonVariant"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "type": {
-                "text": "OnxButtonSize"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_submitForm",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_resetForm",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "render",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_fontImports",
-              "type": {
-                "text": "array"
-              },
-              "privacy": "private",
-              "static": true,
-              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_baseStyles",
-              "privacy": "private",
-              "static": true,
-              "default": "` :host:not(:defined) { visibility: hidden; } :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_importFonts",
-              "privacy": "private",
-              "static": true,
-              "inheritedFrom": {
-                "name": "OnxComponent",
-                "module": "src/components/onx-component.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OnxComponent",
-            "module": "/src/components/onx-component.js"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "OnxButton",
-          "declaration": {
-            "name": "OnxButton",
-            "module": "src/components/onx-button/component.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "declaration": {
-            "name": "OnxButton",
-            "module": "src/components/onx-button/component.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/components/onx-button/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./component.js"
           }
         }
       ]
@@ -1814,12 +1611,19 @@
     {
       "kind": "javascript-module",
       "path": "src/icons/icons/index.ts",
-      "declarations": [],
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "iconMap",
+          "default": "{ 'add-page': () => import('./add-page.js'), add: () => import('./add.js'), 'admin-home': () => import('./admin-home.js'), administration: () => import('./administration.js'), 'align-left': () => import('./align-left.js'), 'align-right': () => import('./align-right.js'), 'api-key': () => import('./api-key.js'), app: () => import('./app.js'), 'apps-and-surveys': () => import('./apps-and-surveys.js'), 'arrow-circle-left': () => import('./arrow-circle-left.js'), 'arrow-circle-right': () => import('./arrow-circle-right.js'), 'arrow-down': () => import('./arrow-down.js'), 'arrow-left': () => import('./arrow-left.js'), 'arrow-right': () => import('./arrow-right.js'), 'arrow-up': () => import('./arrow-up.js'), attachment: () => import('./attachment.js'), 'bar-chart': () => import('./bar-chart.js'), billing: () => import('./billing.js'), bold: () => import('./bold.js'), 'boxed-search': () => import('./boxed-search.js'), 'branching-logic-indicator': () => import('./branching-logic-indicator.js'), 'bubble-chart': () => import('./bubble-chart.js'), 'calendar-chart': () => import('./calendar-chart.js'), 'card-view': () => import('./card-view.js'), 'caret-down': () => import('./caret-down.js'), 'caret-left': () => import('./caret-left.js'), 'caret-right': () => import('./caret-right.js'), 'caret-up': () => import('./caret-up.js'), center: () => import('./center.js'), 'check-circle-outline': () => import('./check-circle-outline.js'), 'check-circle': () => import('./check-circle.js'), 'checkmark-plain': () => import('./checkmark-plain.js'), 'chevron-down': () => import('./chevron-down.js'), 'chevron-left': () => import('./chevron-left.js'), 'chevron-up': () => import('./chevron-up.js'), 'chrvron-right': () => import('./chrvron-right.js'), 'circle-arrow-right': () => import('./circle-arrow-right.js'), 'circle-filled': () => import('./circle-filled.js'), 'circle-outline': () => import('./circle-outline.js'), 'circles-intersecting': () => import('./circles-intersecting.js'), clipboard: () => import('./clipboard.js'), 'close-plain': () => import('./close-plain.js'), close: () => import('./close.js'), 'cloud-edit': () => import('./cloud-edit.js'), color: () => import('./color.js'), 'column-chart': () => import('./column-chart.js'), 'column-plus-line-chart-1': () => import('./column-plus-line-chart-1.js'), 'column-plus-line-chart': () => import('./column-plus-line-chart.js'), compare: () => import('./compare.js'), configure: () => import('./configure.js'), container: () => import('./container.js'), content: () => import('./content.js'), create: () => import('./create.js'), 'dashboard-admin': () => import('./dashboard-admin.js'), dashboard: () => import('./dashboard.js'), 'data-connector': () => import('./data-connector.js'), 'date-time-field': () => import('./date-time-field.js'), document: () => import('./document.js'), 'donut-chart': () => import('./donut-chart.js'), download: () => import('./download.js'), duplicate: () => import('./duplicate.js'), 'dynamic-document': () => import('./dynamic-document.js'), 'edit-note': () => import('./edit-note.js'), edit: () => import('./edit.js'), edit2: () => import('./edit2.js'), 'email-body': () => import('./email-body.js'), 'email-sending-domain': () => import('./email-sending-domain.js'), 'email-template': () => import('./email-template.js'), email: () => import('./email.js'), expand: () => import('./expand.js'), export: () => import('./export.js'), 'external-link': () => import('./external-link.js'), eye: () => import('./eye.js'), 'field-help': () => import('./field-help.js'), 'filter-down': () => import('./filter-down.js'), filter: () => import('./filter.js'), find: () => import('./find.js'), flag: () => import('./flag.js'), 'folder-open': () => import('./folder-open.js'), 'formula-field': () => import('./formula-field.js'), 'gantt-chart': () => import('./gantt-chart.js'), 'grip-horizontal': () => import('./grip-horizontal.js'), 'grip-vertical': () => import('./grip-vertical.js'), 'heat-map': () => import('./heat-map.js'), help: () => import('./help.js'), history: () => import('./history.js'), home: () => import('./home.js'), 'image-file': () => import('./image-file.js'), import: () => import('./import.js'), 'indirect-user-save': () => import('./indirect-user-save.js'), info: () => import('./info.js'), integration: () => import('./integration.js'), italic: () => import('./italic.js'), layers: () => import('./layers.js'), 'line-chart': () => import('./line-chart.js'), link: () => import('./link.js'), 'list-field': () => import('./list-field.js'), list: () => import('./list.js'), 'login-history': () => import('./login-history.js'), logout: () => import('./logout.js'), 'map-pin': () => import('./map-pin.js'), map: () => import('./map.js'), maximize: () => import('./maximize.js'), 'menu-ragged': () => import('./menu-ragged.js'), menu: () => import('./menu.js'), merge: () => import('./merge.js'), messaging: () => import('./messaging.js'), minimize: () => import('./minimize.js'), minus: () => import('./minus.js'), 'nav-left': () => import('./nav-left.js'), 'nav-top': () => import('./nav-top.js'), 'number-field': () => import('./number-field.js'), package: () => import('./package.js'), 'phone-mobile': () => import('./phone-mobile.js'), phone: () => import('./phone.js'), 'pie-chart': () => import('./pie-chart.js'), 'pin-filled': () => import('./pin-filled.js'), 'pin-outlined': () => import('./pin-outlined.js'), portal: () => import('./portal.js'), preferences: () => import('./preferences.js'), print: () => import('./print.js'), 'pyramid-chart': () => import('./pyramid-chart.js'), 'radar-chart': () => import('./radar-chart.js'), 'reference-field': () => import('./reference-field.js'), 'report-admin': () => import('./report-admin.js'), 'report-listing': () => import('./report-listing.js'), report: () => import('./report.js'), restore: () => import('./restore.js'), role: () => import('./role.js'), search: () => import('./search.js'), 'secure-field': () => import('./secure-field.js'), security: () => import('./security.js'), share: () => import('./share.js'), slack: () => import('./slack.js'), 'sort-custom': () => import('./sort-custom.js'), 'sort-L1-ascending': () => import('./sort-L1-ascending.js'), 'sort-L1-custom': () => import('./sort-L1-custom.js'), 'sort-L1-descending': () => import('./sort-L1-descending.js'), 'sort-L2-ascending': () => import('./sort-L2-ascending.js'), 'sort-L2-custom': () => import('./sort-L2-custom.js'), 'sort-L2-descending': () => import('./sort-L2-descending.js'), 'sort-L3-ascending': () => import('./sort-L3-ascending.js'), 'sort-L3-custom': () => import('./sort-L3-custom.js'), 'sort-L3-descending': () => import('./sort-L3-descending.js'), 'sort-L4-ascending': () => import('./sort-L4-ascending.js'), 'sort-L4-custom': () => import('./sort-L4-custom.js'), 'sort-L4-descending': () => import('./sort-L4-descending.js'), 'spline-chart': () => import('./spline-chart.js'), 'stacked-bar-chart': () => import('./stacked-bar-chart.js'), 'stacked-column-chart': () => import('./stacked-column-chart.js'), survey: () => import('./survey.js'), test: () => import('./test.js'), 'text-field': () => import('./text-field.js'), 'text-message': () => import('./text-message.js'), 'time-span-field': () => import('./time-span-field.js'), transfer: () => import('./transfer.js'), trash: () => import('./trash.js'), 'tree-node': () => import('./tree-node.js'), underline: () => import('./underline.js'), undo: () => import('./undo.js'), upload: () => import('./upload.js'), 'user-group': () => import('./user-group.js'), 'user-portal': () => import('./user-portal.js'), 'user-preferences': () => import('./user-preferences.js'), user: () => import('./user.js'), 'view-preview': () => import('./view-preview.js'), wand: () => import('./wand.js'), warning: () => import('./warning.js'), workflow: () => import('./workflow.js'), }"
+        }
+      ],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
+            "name": "iconMap",
             "module": "src/icons/icons/index.ts"
           }
         }
@@ -3021,6 +2825,223 @@
           "declaration": {
             "name": "\n  <svg viewBox=\"0 0 16 16\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" id=\"workflow\">\n    <path id=\"workflow\" d=\"M9.875 10.3125H15.5V15.9375H9.875V13.5938H6.125V15.9375H0.5V10.3125H2.84375V6.51855H2.8291C2.16504 6.40137 1.6084 6.08398 1.15918 5.56641C0.719727 5.04883 0.5 4.44336 0.5 3.75C0.5 2.96875 0.773438 2.30469 1.32031 1.75781C1.86719 1.21094 2.53125 0.9375 3.3125 0.9375C4.09375 0.9375 4.75781 1.21094 5.30469 1.75781C5.85156 2.30469 6.125 2.96875 6.125 3.75C6.125 4.44336 5.90039 5.04883 5.45117 5.56641C5.01172 6.08398 4.45508 6.40137 3.78125 6.51855V10.3125H6.125V12.6562H9.875V10.3125ZM1.4375 3.75C1.4375 4.26758 1.61816 4.70703 1.97949 5.06836C2.35059 5.42969 2.79492 5.61523 3.3125 5.625C3.83008 5.625 4.26953 5.44434 4.63086 5.08301C5.00195 4.71191 5.1875 4.26758 5.1875 3.75C5.1875 3.23242 5.00195 2.79297 4.63086 2.43164C4.26953 2.06055 3.83008 1.875 3.3125 1.875C2.79492 1.875 2.35059 2.06055 1.97949 2.43164C1.61816 2.79297 1.4375 3.23242 1.4375 3.75ZM5.27539 15.0879V11.1621H1.34961V15.0879H5.27539Z\" fill=\"currentColor\"></path>\n  </svg>\n",
             "module": "src/icons/icons/workflow.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/onx-button/component.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OnxButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "variants",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "readonly": true,
+              "default": "{ primaryFilled: 'primary-filled', primaryFilledSuccess: 'primary-filled-success', primaryFilledWarning: 'primary-filled-warning', secondaryFilled: 'secondary-filled', secondaryOutlined: 'secondary-outlined', secondaryOutlinedWarning: 'secondary-outlined-warning', link: 'link', }"
+            },
+            {
+              "kind": "field",
+              "name": "sizes",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "readonly": true,
+              "default": "{ sm: 'sm', md: 'md', lg: 'lg', }"
+            },
+            {
+              "kind": "field",
+              "name": "_styles",
+              "privacy": "private",
+              "static": true,
+              "readonly": true,
+              "default": "` button { display: inline-flex; justify-content: center; align-items: center; gap: 0.25rem; border-radius: 0.3125rem; text-align: center; font-size: 0.8125rem; font-style: normal; font-weight: 500; line-height: 1.375rem; letter-spacing: 0.01563rem; } button:disabled { pointer-events: none; } .${OnxButton.sizes.sm} { padding: 0rem 0.625rem; } .${OnxButton.sizes.md} { padding: 0.125rem 0.625rem; } .${OnxButton.sizes.lg} { padding: 0.375rem 0.75rem; gap: 0.375rem; } .${OnxButton.variants.primaryFilled}, .${OnxButton.variants.primaryFilledSuccess}, .${OnxButton.variants.primaryFilledWarning} { color: var(--primary-white); } .${OnxButton.variants.primaryFilled} { background-color: var(--primary-light-blue); } .${OnxButton.variants.primaryFilled}:hover { background-color: var(--state-hover-blue); } .${OnxButton.variants.primaryFilled}:disabled { background-color: var(--state-disabled-blue); } .${OnxButton.variants.primaryFilledSuccess} { background-color: var(--status-success); } .${OnxButton.variants.primaryFilledSuccess}:hover { background-color: var(--state-hover-success); } .${OnxButton.variants.primaryFilledWarning} { background-color: var(--status-error); } .${OnxButton.variants.primaryFilledWarning}:hover { background-color: var(--state-hover-error); } .${OnxButton.variants.secondaryFilled}, .${OnxButton.variants.secondaryOutlined} { color: var(--gray-dark-gray); /* TODO: Be on look out for this border style/color else where */ border: 1px solid #ACB0BB; } .${OnxButton.variants.secondaryFilled}:hover, .${OnxButton.variants.secondaryOutlined}:hover { background-color: var(--state-hover-orange); } .${OnxButton.variants.secondaryOutlined}, .${OnxButton.variants.secondaryOutlinedWarning} { background-color: transparent; } .${OnxButton.variants.secondaryFilled} { background-color: var(--gray-lighter-gray); } .${OnxButton.variants.secondaryOutlinedWarning} { color: var(--status-error); border: 1px solid var(--status-error); } .${OnxButton.variants.secondaryOutlinedWarning}:hover { color: var(--state-hover-error); border-color: var(--state-hover-error); } .${OnxButton.variants.link} { background-color: transparent; color: var(--primary-light-blue); } .${OnxButton.variants.link}:hover { text-decoration: underline; } `"
+            },
+            {
+              "kind": "field",
+              "name": "_obsAttributes",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "private",
+              "static": true,
+              "readonly": true,
+              "default": "{ type: 'type', variant: 'variant', disabled: 'disabled', size: 'size', }"
+            },
+            {
+              "kind": "field",
+              "name": "types",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "readonly": true,
+              "default": "{ submit: 'submit', reset: 'reset', button: 'button', }"
+            },
+            {
+              "kind": "field",
+              "name": "_button",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_internals",
+              "type": {
+                "text": "ElementInternals"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "readonly": true,
+              "default": "'onx-button'"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "OnxButtonType"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "OnxButtonVariant"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "OnxButtonSize"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_submitForm",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_resetForm",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_fontImports",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[ 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Barlow:300,400,500|Barlow+Condensed:300,400,500|Raleway:300,400,500&display=swap', ]",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_baseStyles",
+              "privacy": "private",
+              "static": true,
+              "default": "` :host:not(:defined) { visibility: hidden; } :host { --primary-blue: #194488; --primary-light-blue: #4A87E3; --primary-orange: #F7941D; --primary-black: #000000; --primary-white: #FFFFFF; --gray-darker-gray: #222222; --gray-dark-gray: #555555; --gray-gray: #888888; --gray-light-gray: #BBBBBB; --gray-lighter-gray: #EEEEEE; --status-success: #2FCC66; --status-warning: #F1C40F; --status-elevated-warning: #E67E22; --status-error: #E74C3C; --state-hover-orange: #FDDFBC; --state-hover-blue: #437ACC; --state-hover-success: #4B9754; --state-hover-error: #D33F30; --state-disabled-blue: #C5D5F3; --state-selected-blue: #667BA6; font-size: 16px; font-family: Roboto, Arial, Helvetica, sans-serif; font-style: normal; } * { margin: 0; padding: 0; box-sizing: border-box; } button { font-family: inherit; border: none; cursor: pointer; } svg { display: block; } .typo-b1 { font-size: 0.875rem; font-style: normal; font-weight: 500; line-height: 1rem; letter-spacing: 0.00219rem; } .typo-b2 { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01563rem; } .typo-b3 { font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.00206rem; } .typo-b4 { font-size: 0.6875rem; font-weight: 400; letter-spacing: 0.00175rem; } h1, h2, h3, h4, h5, h6 { color: var(--primary-black); font-weight: 700; } h1 { font-size: 1.25rem; line-height: 1.5rem; letter-spacing: 0.00313rem; } h2 { font-size: 1.125rem; line-height: 1.5rem; letter-spacing: 0.00281rem; } h3 { font-size: 1rem; line-height: 1.25rem; letter-spacing: 0.0025rem; } h4 { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.00219rem; } h5 { font-size: 0.8125rem; font-weight: 500; line-height: 1.25rem; letter-spacing: 0.00206rem; } `",
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_importFonts",
+              "privacy": "private",
+              "static": true,
+              "inheritedFrom": {
+                "name": "OnxComponent",
+                "module": "src/components/onx-component.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OnxComponent",
+            "module": "/src/components/onx-component.js"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OnxButton",
+          "declaration": {
+            "name": "OnxButton",
+            "module": "src/components/onx-button/component.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "OnxButton",
+            "module": "src/components/onx-button/component.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/onx-button/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./component.js"
           }
         }
       ]

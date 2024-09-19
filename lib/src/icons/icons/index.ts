@@ -1,4 +1,4 @@
-export default {
+const iconMap = {
   'add-page': () => import('./add-page.js'),
   add: () => import('./add.js'),
   'admin-home': () => import('./admin-home.js'),
@@ -168,4 +168,6 @@ export default {
   wand: () => import('./wand.js'),
   warning: () => import('./warning.js'),
   workflow: () => import('./workflow.js'),
-} as { [index: string]: () => Promise<{ default: string }> };
+} as { [key: string]: () => Promise<{ default: string }> };
+
+export default iconMap;
